@@ -1,0 +1,41 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "dogs"
+    label: "Perros en Adopción"
+    folder: "src/content/dogs"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nombre", name: "name", widget: "string" }
+      - { label: "Edad", name: "age", widget: "string", hint: "Ej: 2 años, 6 meses" }
+      - { label: "Tamaño", name: "size", widget: "select", options: ["Pequeño", "Mediano", "Grande"] }
+      - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "Foto", name: "image", widget: "image" }
+      - { label: "Sexo", name: "sex", widget: "select", options: ["Macho", "Hembra"] }
+      - { label: "Adoptado", name: "adopted", widget: "boolean", default: false }
+      - { label: "Destacado", name: "featured", widget: "boolean", default: false }
+
+  - name: "campaigns"
+    label: "Campañas"
+    folder: "src/content/campaigns"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "Imagen", name: "image", widget: "image" }
+      - { label: "Meta de Donación ($)", name: "goal", widget: "number", value_type: "int" }
+      - { label: "Recaudado ($)", name: "raised", widget: "number", value_type: "int", default: 0 }
+      - { label: "Activa", name: "active", widget: "boolean", default: true }

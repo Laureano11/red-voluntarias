@@ -1,0 +1,98 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<Layout title="Quiénes Somos" description="Conocé la historia de Red Voluntarias y nuestra misión de rescate y adopción responsable.">
+  <Hero
+    title="Quiénes Somos"
+    subtitle="Una red de personas comprometidas con el bienestar animal."
+  />
+
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <!-- Misión -->
+      <div class="rounded-2xl bg-white p-8 shadow-sm">
+        <h2 class="text-2xl font-bold text-gray-900">Nuestra Misión</h2>
+        <p class="mt-4 leading-relaxed text-gray-600">
+          Red Voluntarias nació en 2020 con un grupo de vecinos que decidieron organizarse para ayudar a los animales en situación de calle de su comunidad. Lo que empezó como un esfuerzo local creció hasta convertirse en una red de voluntarios que opera en múltiples barrios.
+        </p>
+        <p class="mt-4 leading-relaxed text-gray-600">
+          Nuestra misión es rescatar, rehabilitar y encontrar hogares responsables para animales abandonados, promoviendo la tenencia responsable y la esterilización como herramientas de cambio.
+        </p>
+      </div>
+
+      <!-- Valores -->
+      <div class="mt-10 grid gap-6 sm:grid-cols-3">
+        <div class="rounded-2xl bg-white p-6 text-center shadow-sm">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-2xl">
+            ❤️
+          </div>
+          <h3 class="mt-4 font-bold text-gray-900">Amor</h3>
+          <p class="mt-2 text-sm text-gray-600">
+            Cada animal merece ser tratado con amor y respeto.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 text-center shadow-sm">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-accent/10 text-2xl">
+            🤝
+          </div>
+          <h3 class="mt-4 font-bold text-gray-900">Comunidad</h3>
+          <p class="mt-2 text-sm text-gray-600">
+            Trabajamos juntos: voluntarios, tránsitos y adoptantes.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 text-center shadow-sm">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-secondary/10 text-2xl">
+            🐾
+          </div>
+          <h3 class="mt-4 font-bold text-gray-900">Responsabilidad</h3>
+          <p class="mt-2 text-sm text-gray-600">
+            Promovemos la adopción responsable y el seguimiento post-adopción.
+          </p>
+        </div>
+      </div>
+
+      <!-- Qué hacemos -->
+      <div class="mt-10 rounded-2xl bg-white p-8 shadow-sm">
+        <h2 class="text-2xl font-bold text-gray-900">¿Qué hacemos?</h2>
+        <ul class="mt-6 space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-sm text-white">✓</span>
+            <p class="text-gray-600"><strong class="text-gray-900">Rescate:</strong> Rescatamos animales en situación de emergencia, abandono o maltrato.</p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-sm text-white">✓</span>
+            <p class="text-gray-600"><strong class="text-gray-900">Rehabilitación:</strong> Brindamos atención veterinaria, vacunación y esterilización.</p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-sm text-white">✓</span>
+            <p class="text-gray-600"><strong class="text-gray-900">Tránsito:</strong> Red de hogares temporales hasta encontrar familia definitiva.</p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-sm text-white">✓</span>
+            <p class="text-gray-600"><strong class="text-gray-900">Adopción:</strong> Proceso de adopción responsable con entrevista y seguimiento.</p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-sm text-white">✓</span>
+            <p class="text-gray-600"><strong class="text-gray-900">Campañas:</strong> Organizamos campañas de esterilización y concientización.</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-10 rounded-2xl bg-gradient-to-r from-primary to-primary-dark p-8 text-center text-white shadow-lg">
+        <h2 class="text-2xl font-bold">¿Querés ser parte?</h2>
+        <p class="mt-3 text-blue-100">
+          Siempre necesitamos voluntarios, hogares de tránsito y donaciones.
+        </p>
+        <a
+          href="/contacto"
+          class="mt-6 inline-flex rounded-full bg-white px-8 py-3 font-semibold text-primary transition-colors hover:bg-blue-50"
+        >
+          Sumate como voluntario
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,52 @@
+---
+interface Props {
+  name: string;
+  age: string;
+  size: string;
+  description: string;
+  image: string;
+  sex: string;
+  adopted: boolean;
+}
+
+const { name, age, size, description, image, sex, adopted } = Astro.props;
+---
+
+<article class="group overflow-hidden rounded-2xl bg-white shadow-md transition-all hover:shadow-xl">
+  <div class="relative aspect-square overflow-hidden">
+    <img
+      src={image}
+      alt={`Foto de ${name}`}
+      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+      loading="lazy"
+    />
+    {adopted && (
+      <div class="absolute inset-0 flex items-center justify-center bg-black/50">
+        <span class="rounded-full bg-accent px-4 py-2 text-sm font-bold text-white">
+          ¡Adoptado!
+        </span>
+      </div>
+    )}
+    <span class="absolute right-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-gray-700 shadow-sm">
+      {size}
+    </span>
+  </div>
+
+  <div class="p-5">
+    <div class="flex items-center justify-between">
+      <h3 class="text-xl font-bold text-gray-900">{name}</h3>
+      <span class="text-sm text-gray-500">{sex}</span>
+    </div>
+    <p class="mt-1 text-sm font-medium text-primary">{age}</p>
+    <p class="mt-3 line-clamp-2 text-sm leading-relaxed text-gray-600">{description}</p>
+
+    {!adopted && (
+      <a
+        href="/contacto"
+        class="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-dark"
+      >
+        Quiero Adoptarlo
+      </a>
+    )}
+  </div>
+</article>

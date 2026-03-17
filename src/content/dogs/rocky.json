@@ -1,0 +1,10 @@
+{
+  "name": "Rocky",
+  "age": "4 años",
+  "size": "Grande",
+  "description": "Rocky es un perro leal y protector. Se lleva bien con niños y otros perros. Ideal para familias con patio grande.",
+  "image": "/images/dog-placeholder-2.svg",
+  "sex": "Macho",
+  "adopted": false,
+  "featured": true
+}

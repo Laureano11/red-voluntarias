@@ -1,0 +1,74 @@
+---
+const currentPath = Astro.url.pathname;
+
+const links = [
+  { href: "/", label: "Inicio" },
+  { href: "/adoptar", label: "Adoptá" },
+  { href: "/campanas", label: "Campañas" },
+  { href: "/quienes-somos", label: "Quiénes Somos" },
+  { href: "/contacto", label: "Contacto" },
+];
+---
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <a href="/" class="flex items-center gap-2 text-xl font-bold text-primary">
+        <span class="text-2xl">🐾</span>
+        Red Voluntarias
+      </a>
+
+      <button
+        id="mobile-menu-btn"
+        class="inline-flex items-center justify-center rounded-md p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:hidden"
+        aria-label="Abrir menú"
+      >
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+
+      <ul class="hidden items-center gap-1 md:flex">
+        {links.map(({ href, label }) => (
+          <li>
+            <a
+              href={href}
+              class:list={[
+                "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                currentPath === href
+                  ? "bg-primary/10 text-primary"
+                  : "text-gray-600 hover:bg-gray-100 hover:text-gray-900",
+              ]}
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <ul id="mobile-menu" class="hidden border-t pb-3 pt-2 md:hidden">
+      {links.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class:list={[
+              "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
+              currentPath === href
+                ? "bg-primary/10 text-primary"
+                : "text-gray-600 hover:bg-gray-100 hover:text-gray-900",
+            ]}
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  btn?.addEventListener("click", () => menu?.classList.toggle("hidden"));
+</script>
