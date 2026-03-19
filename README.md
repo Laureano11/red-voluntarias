@@ -68,10 +68,18 @@ npm run dev
 
 Luego visitá `http://localhost:4321/admin`.
 
-### Colecciones editables
+### Guía para quien edita contenido (sin código)
 
-- **Perros en Adopción**: nombre, edad, tamaño, descripción, foto, sexo, estado de adopción
-- **Campañas**: título, descripción, imagen, meta de donación, monto recaudado, estado activo
+Ver **[docs/GUIA-CMS.md](./docs/GUIA-CMS.md)** — pasos para entrar a `/admin`, crear perros, ventas, eventos, urgencias, etc.
+
+### Colecciones editables (resumen)
+
+- **Perros en Adopción** — catálogo Adoptar (salud, carácter, tamaño, etc.)
+- **En familia** — adoptados (nombre + foto)
+- **Campañas** — donaciones
+- **Ventas** — productos solidarios
+- **Eventos realizados** — galería y texto
+- **Urgencias** — casos urgentes (`activo` para mostrar u ocultar)
 
 ## Deploy
 
