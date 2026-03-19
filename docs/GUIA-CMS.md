@@ -15,6 +15,8 @@ Esta guía es para quienes **actualizan el contenido del sitio** (perros, ventas
 3. Si pide **iniciar sesión**, usá el usuario que te dio quien configuró el sitio (Netlify Identity).  
    *Si todavía no está configurado el login, quien mantiene el sitio tiene que activar Netlify Identity y Git Gateway.*
 
+4. Si te llegó un **mail de invitación** o de **cambio de contraseña** y el enlace abre una página en **`/cuenta/`**, es normal: ahí debería aparecer la ventana para definir o cambiar la contraseña. Si no ves nada, probá recargar o abrir el link en otra ventana del navegador.
+
 ### Opción B — En la computadora de casa (solo si alguien técnico lo deja listo)
 
 Hace falta tener el proyecto en la PC y dos ventanas de terminal:

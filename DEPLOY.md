@@ -206,6 +206,21 @@ npm run dev
 
 > En producción el CMS funciona exclusivamente a través de Netlify. Si el deploy es en un servidor propio con Nginx, el panel CMS no estará operativo a menos que se configure un backend alternativo.
 
+### Invitaciones y recuperación de contraseña (Identity)
+
+Los mails de Netlify llevan un enlace con un token en el hash (`#invite_token=…`, `#recovery_token=…`, etc.). Ese token lo procesa el **Netlify Identity Widget**. En sitios con más JavaScript en la portada, a veces el modal solo “parpadea” y no se completa el flujo.
+
+En este repo hay una página **mínima** solo para eso: **`/cuenta/`** (`public/cuenta/index.html`), sin otros scripts.
+
+En **Netlify → Project configuration → Identity → Emails**, si podés **personalizar plantillas** (según tu plan), hacé que los enlaces apunten a `/cuenta/` en lugar de la raíz, usando las variables que documenta Netlify, por ejemplo:
+
+- Invitación: `{{ .SiteURL }}/cuenta/#invite_token={{ .Token }}`
+- Recuperar contraseña: `{{ .SiteURL }}/cuenta/#recovery_token={{ .Token }}`
+- Confirmación de registro: `{{ .SiteURL }}/cuenta/#confirmation_token={{ .Token }}`
+- Cambio de mail: `{{ .SiteURL }}/cuenta/#email_change_token={{ .Token }}`
+
+Mientras tanto, el layout del sitio y `/admin/` intentan **abrir el modal a mano** si detectan esos tokens en la URL (`ni.open()` tras `init()`).
+
 ---
 
 ## 9. Resumen de comandos
