@@ -1,10 +1,16 @@
 {
   "name": "Luna",
-  "age": "2 años",
-  "size": "Mediano",
-  "description": "Luna es una perra cariñosa y juguetona que adora los paseos largos. Fue rescatada de la calle cuando era cachorra y ahora busca un hogar lleno de amor.",
-  "image": "/images/dog-placeholder-1.svg",
   "sex": "Hembra",
+  "age": "2 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": true,
+    "vacunado": true
+  },
+  "caracter": "Luna es cariñosa y juguetona; adora los paseos largos. Fue rescatada de la calle cuando era cachorra y hoy busca un hogar con mucho amor.",
+  "size": "Mediano",
+  "observaciones": "",
+  "image": "/images/dog-placeholder-1.svg",
   "adopted": false,
   "featured": true
 }

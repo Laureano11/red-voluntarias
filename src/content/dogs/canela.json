@@ -1,10 +1,16 @@
 {
   "name": "Canela",
-  "age": "8 meses",
-  "size": "Pequeño",
-  "description": "Canela es una cachorrita llena de energía. Le encanta jugar con pelotas y aprender trucos nuevos. Perfecta para departamento.",
-  "image": "/images/dog-placeholder-3.svg",
   "sex": "Hembra",
+  "age": "8 meses",
+  "salud": {
+    "castrado": false,
+    "desparasitado": true,
+    "vacunado": true
+  },
+  "caracter": "Canela es una cachorrita llena de energía. Le encanta jugar con pelotas y aprender trucos nuevos. Se adapta bien a departamento si le dan paseos diarios.",
+  "size": "Pequeño",
+  "observaciones": "Ideal para familia sin otros perros grandes o con introducción gradual.",
+  "image": "/images/dog-placeholder-3.svg",
   "adopted": false,
   "featured": true
 }

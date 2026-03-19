@@ -1,0 +1,88 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { SOCIO_APORTE_MENSUAL_URL } from "../../config/socio";
+
+const paraQue = [
+  "Comida y medicación de animales en tránsito y en campañas.",
+  "Castraciones, vacunas y urgencias veterinarias.",
+  "Logística de rescates, traslados y materiales básicos.",
+  "Mantener difusión, eventos y el trabajo de coordinación de la red.",
+];
+---
+
+<Layout
+  title="Hacerte socio"
+  description="Sumate con un aporte mensual fijo y ayudá a sostener los rescates y campañas de Red Voluntarias todo el año."
+>
+  <section class="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary-dark py-20 text-white sm:py-24">
+    <div class="pointer-events-none absolute inset-0 opacity-20">
+      <div class="absolute right-0 top-0 h-80 w-80 rounded-full bg-secondary blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-white blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <span class="inline-block rounded-full bg-white/15 px-4 py-1 text-sm font-medium">Cómo ayudar</span>
+      <h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">Hacete socio</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-blue-100">
+        Un aporte en plata <strong class="font-semibold text-white">todos los meses</strong> nos permite planificar rescates, tratamientos y campañas con más tranquilidad.
+      </p>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
+    <section class="mb-12">
+      <h2 class="text-2xl font-extrabold text-gray-900">Qué significa ser socio</h2>
+      <p class="mt-4 leading-relaxed text-gray-600">
+        Ser socio o socia de Red Voluntarias es comprometerte con un <strong class="font-semibold text-gray-900">monto mensual recurrente</strong>: el mismo día o período de cada mes se debita o cobra tu aporte de forma automática (según el medio que elijas: Mercado Pago, tarjeta u otro canal que habilitemos).
+      </p>
+      <p class="mt-4 leading-relaxed text-gray-600">
+        No es una cuota sindical ni te da obligaciones de tiempo: <strong class="font-semibold text-gray-900">podés ayudar solo con el aporte económico</strong>. Si además querés voluntariado o tránsito, es aparte y siempre voluntario.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-extrabold text-gray-900">Para qué usamos los aportes mensuales</h2>
+      <p class="mt-3 text-gray-600">Cada socio ayuda a que podamos:</p>
+      <ul class="mt-6 space-y-3">
+        {paraQue.map((item) => (
+          <li class="flex gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/15 text-sm font-bold text-accent">✓</span>
+            <span class="text-sm leading-relaxed text-gray-700">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mb-12 rounded-2xl border border-amber-100 bg-amber-50/80 p-6 sm:p-8">
+      <h2 class="text-lg font-extrabold text-gray-900">Montos y flexibilidad</h2>
+      <p class="mt-3 text-sm leading-relaxed text-gray-700">
+        Definimos el link de suscripción con un monto base o opciones según lo que configuremos en Mercado Pago (u otra plataforma). <strong class="font-semibold text-gray-900">Podés darte de baja cuando quieras</strong> desde la misma plataforma de pago, sin trámites con la ONG.
+      </p>
+      <p class="mt-3 text-sm text-gray-600">
+        Si preferís donar una sola vez o por otro canal, también podés usar la sección de <a href="/como-ayudar/donaciones" class="font-semibold text-primary underline decoration-primary/30 underline-offset-2">Donaciones</a>.
+      </p>
+    </section>
+
+    <section class="rounded-3xl bg-gray-900 px-8 py-10 text-center text-white">
+      <h2 class="text-xl font-extrabold sm:text-2xl">Sumate con aporte mensual</h2>
+      <p class="mx-auto mt-3 max-w-md text-sm text-gray-300">
+        Al tocar el botón vas al enlace de cobro recurrente. Si todavía no está activo, vas a ver una página de ejemplo hasta que carguemos el link real.
+      </p>
+      <a
+        href={SOCIO_APORTE_MENSUAL_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-3.5 text-base font-bold text-gray-900 shadow-lg transition hover:bg-secondary-dark"
+      >
+        Configurar mi aporte mensual
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+        </svg>
+      </a>
+      <p class="mt-4 text-xs text-gray-500">Se abre en una pestaña nueva.</p>
+    </section>
+
+    <p class="mt-10 text-center text-sm text-gray-500">
+      Consultas: <a href="/contacto" class="font-semibold text-primary underline decoration-primary/30 underline-offset-2">Contacto</a>
+    </p>
+  </div>
+</Layout>

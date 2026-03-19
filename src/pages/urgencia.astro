@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/Layout.astro";
+import UrgenciaCard from "../components/UrgenciaCard.astro";
+import { getCollection } from "astro:content";
+
+const all = await getCollection("urgencias");
+const activas = all.filter((e) => e.data.activo);
+const sorted = [...activas].sort((a, b) => {
+  const fa = a.data.fecha ?? "";
+  const fb = b.data.fecha ?? "";
+  return fb.localeCompare(fa);
+});
+---
+
+<Layout
+  title="Urgencia"
+  description="Casos que necesitan ayuda inmediata: alimento, medicación, tránsito y más. Cada publicación se gestiona desde el panel del sitio."
+>
+  <section class="relative overflow-hidden bg-gradient-to-b from-red-600 to-red-800 py-20 text-white sm:py-24">
+    <div class="pointer-events-none absolute inset-0">
+      <div class="absolute -left-20 top-1/4 h-72 w-72 animate-pulse rounded-full bg-white/10 blur-3xl"></div>
+      <div class="absolute -right-10 bottom-0 h-64 w-64 rounded-full bg-white/5 blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-sm font-bold uppercase tracking-wider">
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-white"></span>
+        </span>
+        Atención
+      </span>
+      <h1 class="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl">Urgencia</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-red-100">
+        Acá publicamos situaciones que <strong class="font-semibold text-white">necesitan respuesta rápida</strong>: puede ser comida, medicinas, tránsito, traslado o cualquier otra necesidad puntual de la red.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="mb-10 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-center text-sm text-amber-950">
+      Si podés ayudar, <a href="/contacto" class="font-bold text-red-700 underline underline-offset-2">contactanos</a> lo antes posible. Los casos se actualizan cuando se resuelven (se ocultan desactivando “Mostrar en el sitio” en el administrador).
+    </div>
+
+    {sorted.length > 0 ? (
+      <div class="space-y-10">
+        {sorted.map((entry) => (
+          <UrgenciaCard {...entry.data} />
+        ))}
+      </div>
+    ) : (
+      <div class="rounded-2xl border border-gray-200 bg-gray-50 py-16 text-center">
+        <p class="text-lg font-medium text-gray-800">No hay urgencias publicadas en este momento.</p>
+        <p class="mt-2 text-sm text-gray-600">Eso es buena señal — o ya fueron resueltas. Para otras formas de ayuda mirá <a href="/como-ayudar/donaciones" class="font-semibold text-primary underline">Donaciones</a> o <a href="/contacto" class="font-semibold text-primary underline">Contacto</a>.</p>
+      </div>
+    )}
+
+    <div class="mt-14 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <a
+        href="/contacto"
+        class="inline-flex w-full items-center justify-center rounded-xl bg-red-600 px-8 py-3.5 font-bold text-white shadow-md transition hover:bg-red-700 sm:w-auto"
+      >
+        Quiero ayudar — Contacto
+      </a>
+      <a
+        href="/como-ayudar/donaciones"
+        class="inline-flex w-full items-center justify-center rounded-xl border-2 border-gray-300 bg-white px-8 py-3.5 font-semibold text-gray-800 transition hover:border-gray-400 sm:w-auto"
+      >
+        Otras formas de donar
+      </a>
+    </div>
+  </section>
+</Layout>

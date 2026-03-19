@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280" role="img" aria-label="Placeholder para código QR de donaciones">
+  <rect width="280" height="280" fill="#f1f5f9"/>
+  <rect x="24" y="24" width="80" height="80" rx="8" fill="#cbd5e1"/>
+  <rect x="176" y="24" width="80" height="80" rx="8" fill="#cbd5e1"/>
+  <rect x="24" y="176" width="80" height="80" rx="8" fill="#cbd5e1"/>
+  <rect x="120" y="120" width="40" height="40" rx="4" fill="#94a3b8"/>
+  <text x="140" y="155" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#64748b">QR</text>
+  <text x="140" y="252" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">Reemplazá por tu QR real</text>
+</svg>

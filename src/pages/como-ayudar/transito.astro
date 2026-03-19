@@ -1,0 +1,87 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { TRANSITO_GOOGLE_FORM_URL } from "../../config/transito";
+
+const puntos = [
+  {
+    titulo: "¿Qué es el tránsito?",
+    texto: "Es alojar en tu casa a un perro (u otro animal) por un tiempo limitado: hasta que se cure de una operación, hasta que consiga adoptante o mientras liberamos un lugar en otro lado. No es adopción definitiva, aunque a veces quien transita termina adoptando.",
+  },
+  {
+    titulo: "¿Cuánto dura?",
+    texto: "Depende de cada caso: puede ser una semana, un mes o algunos meses. Siempre charlamos antes qué necesita el animal y qué podés ofrecer vos, para que sea realista para ambas partes.",
+  },
+  {
+    titulo: "¿Qué necesito?",
+    texto: "Un espacio seguro (aunque sea un sector acotado al principio), paciencia y ganas de seguir indicaciones del equipo (comida, medicación, visitas al vet). La red suele ayudar con alimento y gastos veterinarios cuando hace falta.",
+  },
+  {
+    titulo: "¿Y si no tengo experiencia?",
+    texto: "Te acompañamos: explicamos el caso del animal, cómo presentarlo en casa y a quién avisar si surge algo. Mucha gente empieza con un tránsito corto y va ganando confianza.",
+  },
+];
+---
+
+<Layout
+  title="Tránsito"
+  description="Ofrecé tu hogar de forma temporal para un animal rescatado. Conocé cómo funciona y anotate con el formulario."
+>
+  <section class="relative overflow-hidden bg-gradient-to-br from-accent/90 to-teal-800 py-20 text-white sm:py-24">
+    <div class="pointer-events-none absolute inset-0 opacity-20">
+      <div class="absolute left-0 top-1/4 h-72 w-72 rounded-full bg-white blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-white blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <span class="inline-block rounded-full bg-white/20 px-4 py-1 text-sm font-medium">Cómo ayudar</span>
+      <h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">Hogar de tránsito</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-emerald-50">
+        Podés ayudar recibiendo un perro en tu casa por un tiempo corto, mientras encontramos familia definitiva o completamos su recuperación.
+      </p>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
+    <section class="mb-12">
+      <p class="text-lg leading-relaxed text-gray-700">
+        Los hogares de tránsito son <strong class="font-semibold text-gray-900">fundamentales</strong> para la red: sin ellos, muchos rescates no podrían concretarse. No hace falta tener patio enorme ni estar todo el día en casa; sí compromiso, comunicación con el equipo y trato respetuoso al animal.
+      </p>
+    </section>
+
+    <section class="mb-14">
+      <h2 class="text-2xl font-extrabold text-gray-900">Cómo funciona</h2>
+      <ul class="mt-8 space-y-4">
+        {puntos.map((p) => (
+          <li class="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
+            <h3 class="font-bold text-gray-900">{p.titulo}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-600">{p.texto}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="rounded-3xl bg-surface p-8 ring-1 ring-gray-100 sm:p-10">
+      <h2 class="text-center text-2xl font-extrabold text-gray-900">¿Te interesa ofrecer tránsito?</h2>
+      <p class="mx-auto mt-3 max-w-lg text-center text-sm text-gray-600">
+        Completá el formulario con tus datos y una idea de tu situación (vivienda, otros animales, disponibilidad). Nos vamos a comunicar para ver si encaja con algún caso actual o para tenerte en cuenta más adelante.
+      </p>
+      <div class="mt-8 flex flex-col items-center gap-3">
+        <a
+          href={TRANSITO_GOOGLE_FORM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-8 py-3.5 text-base font-bold text-white shadow-md transition hover:brightness-110"
+        >
+          Ir al formulario de tránsito
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+          </svg>
+        </a>
+        <p class="text-xs text-gray-500">Se abre en una pestaña nueva.</p>
+      </div>
+    </section>
+
+    <p class="mt-10 text-center text-sm text-gray-500">
+      Dudas antes de anotarte: <a href="/contacto" class="font-semibold text-primary underline decoration-primary/30 underline-offset-2">Contacto</a>
+    </p>
+  </div>
+</Layout>

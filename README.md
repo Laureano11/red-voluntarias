@@ -36,12 +36,13 @@ src/
 │   ├── dogs/          # JSON por cada perro (editados vía CMS)
 │   └── campaigns/     # JSON por cada campaña
 ├── layouts/           # Layout base del sitio
+├── config/            # Constantes del sitio (ej. URL formulario de adopción)
 ├── pages/             # Páginas del sitio
-│   ├── index.astro        # Inicio
-│   ├── adoptar.astro      # Catálogo de perros
-│   ├── campanas.astro     # Campañas de donación
-│   ├── quienes-somos.astro# Sobre nosotros
-│   └── contacto.astro     # Formulario de contacto
+│   ├── index.astro
+│   ├── adopciones/adoptar.astro  # Catálogo de perros (CMS)
+│   ├── campanas.astro
+│   ├── quienes-somos.astro
+│   └── contacto.astro
 ├── styles/            # CSS global con Tailwind
 └── content.config.ts  # Esquemas de validación de contenido
 ```

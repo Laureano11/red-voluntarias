@@ -1,0 +1,108 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const pasos = [
+  {
+    n: 1,
+    titulo: "Escribinos con la idea",
+    texto: "Contanos qué tenés en mente: feria, taller en escuela, colecta en el club, stand en un festival, etc. No hace falta tener todo cerrado: con una fecha aproximada y el lugar alcanza para empezar a charlar.",
+  },
+  {
+    n: 2,
+    titulo: "Coordinamos una reunión breve",
+    texto: "Alguien del equipo se comunica para alinear expectativas: qué puede aportar la ONG (difusión, voluntarios, materiales básicos) y qué necesitamos de vos o de la institución (permiso del espacio, mesas, electricidad, etc.).",
+  },
+  {
+    n: 3,
+    titulo: "Definimos fecha y responsables",
+    texto: "Fijamos día y horario realistas, quién arma cada tarea (difusión, logística del día, cuidado de animales si hay) y un canal de mensajes para dudas puntuales.",
+  },
+  {
+    n: 4,
+    titulo: "Difusión conjunta",
+    texto: "Compartimos el evento en redes y, si querés, te pasamos textos e imágenes para que lo publiques en tu comunidad o escuela. Cuanto más claro el cartel (lugar, hora, si hay adopción o solo información), mejor.",
+  },
+  {
+    n: 5,
+    titulo: "Día del evento",
+    texto: "Llegamos con tiempo para montar, revisamos seguridad de animales y personas, y mantenemos comunicación durante la jornada. Después hacemos una mini devolución: qué salió bien y qué mejorar para la próxima.",
+  },
+  {
+    n: 6,
+    titulo: "Seguimiento",
+    texto: "Si hubo adopciones o contactos importantes, seguimos el protocolo habitual de la red. Las fotos y un breve resumen pueden publicarse en Eventos realizados para que la comunidad vea el resultado.",
+  },
+];
+
+const consejos = [
+  "Los eventos con animales requieren sombra, agua y un lugar tranquilo para que no se estresen.",
+  "En espacios públicos suele hacer falta permiso municipal o del club: anticipate con tiempo.",
+  "Si esperás mucha concurrencia, conviene tener dos personas “de contacto” con la ONG el día del evento.",
+];
+---
+
+<Layout
+  title="Cómo organizar"
+  description="Pasos para coordinar un evento solidario junto a Red Voluntarias: ferias, talleres, colectas y más."
+>
+  <section class="relative overflow-hidden bg-gradient-to-br from-slate-800 to-gray-900 py-20 text-white sm:py-24">
+    <div class="pointer-events-none absolute inset-0 opacity-30">
+      <div class="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-primary blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <span class="inline-block rounded-full bg-white/10 px-4 py-1 text-sm font-medium">Organizá con nosotros</span>
+      <h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">Cómo organizar un evento</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-gray-300">
+        Guía general para sumar fuerzas con la red. Los detalles los ajustamos en cada caso; esto sirve para saber por dónde empezar.
+      </p>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
+    <ol class="relative space-y-0 border-l-2 border-primary/30 pl-8 sm:pl-10">
+      {pasos.map((paso) => (
+        <li class="relative pb-12 last:pb-0">
+          <span
+            class="absolute -left-[calc(0.5rem+2px)] top-0 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full bg-primary text-sm font-extrabold text-white sm:h-9 sm:w-9"
+            aria-hidden="true"
+          >
+            {paso.n}
+          </span>
+          <h2 class="text-xl font-extrabold text-gray-900">{paso.titulo}</h2>
+          <p class="mt-2 text-sm leading-relaxed text-gray-600">{paso.texto}</p>
+        </li>
+      ))}
+    </ol>
+
+    <section class="mt-14 rounded-2xl bg-amber-50 p-6 ring-1 ring-amber-100 sm:p-8">
+      <h2 class="text-lg font-extrabold text-amber-950">Consejos rápidos</h2>
+      <ul class="mt-4 space-y-3 text-sm text-amber-950/90">
+        {consejos.map((c) => (
+          <li class="flex gap-2">
+            <span class="font-bold text-amber-600">•</span>
+            <span>{c}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mt-12 rounded-3xl bg-surface p-8 text-center ring-1 ring-gray-100">
+      <h2 class="text-xl font-extrabold text-gray-900">¿Seguimos la charla?</h2>
+      <p class="mt-2 text-sm text-gray-600">Escribinos y te respondemos a la brevedad.</p>
+      <div class="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a
+          href="/contacto"
+          class="inline-flex rounded-full bg-primary px-8 py-3 font-semibold text-white hover:bg-primary-dark"
+        >
+          Ir a contacto
+        </a>
+        <a
+          href="/organiza/eventos"
+          class="inline-flex rounded-full bg-white px-8 py-3 font-semibold text-gray-800 ring-1 ring-gray-200 hover:bg-gray-50"
+        >
+          Ver eventos ya hechos
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>

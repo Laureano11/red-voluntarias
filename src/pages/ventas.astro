@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProductoVentaCard from "../components/ProductoVentaCard.astro";
+import { getCollection } from "astro:content";
+import { VENTAS_INSTAGRAM_URL } from "../config/ventas";
+
+const productos = await getCollection("ventas");
+const ordenados = [...productos].sort((a, b) =>
+  a.data.nombre.localeCompare(b.data.nombre, "es")
+);
+---
+
+<Layout
+  title="Ventas"
+  description="Productos solidarios a la venta. Coordiná tu compra por Instagram: cada compra ayuda a los rescates."
+>
+  <section class="relative overflow-hidden bg-gradient-to-br from-secondary/90 to-amber-500 py-20 text-gray-900 sm:py-24">
+    <div class="pointer-events-none absolute inset-0 opacity-30">
+      <div class="absolute right-1/4 top-0 h-64 w-64 rounded-full bg-white blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <span class="inline-block rounded-full bg-white/50 px-4 py-1 text-sm font-semibold">Solidarias</span>
+      <h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">Ventas</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg font-medium text-gray-800">
+        Acá mostramos lo que suele haber disponible. <strong class="font-bold">No vendemos por esta web:</strong> el catálogo se actualiza desde el panel y coordinás la compra por Instagram.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    {ordenados.length > 0 ? (
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {ordenados.map((p) => (
+          <ProductoVentaCard {...p.data} />
+        ))}
+      </div>
+    ) : (
+      <div class="rounded-2xl border border-dashed border-gray-200 bg-gray-50 py-16 text-center">
+        <p class="text-lg text-gray-600">Todavía no hay productos cargados.</p>
+        <p class="mt-2 text-sm text-gray-500">Sumalos desde el panel de administración del sitio.</p>
+      </div>
+    )}
+
+    <div class="mx-auto mt-16 max-w-xl rounded-3xl bg-gradient-to-br from-primary to-primary-dark p-8 text-center text-white shadow-xl sm:p-10">
+      <h2 class="text-xl font-extrabold sm:text-2xl">¿Querés comprar?</h2>
+      <p class="mt-3 text-sm text-blue-100">
+        Escribinos por Instagram con el nombre del producto. Te confirmamos disponibilidad, forma de pago y entrega.
+      </p>
+      <a
+        href={VENTAS_INSTAGRAM_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-bold text-primary shadow-md transition hover:bg-blue-50 sm:w-auto"
+      >
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+        </svg>
+        Comprar
+      </a>
+      <p class="mt-4 text-xs text-blue-200">Te lleva a Instagram en una pestaña nueva.</p>
+    </div>
+  </section>
+</Layout>

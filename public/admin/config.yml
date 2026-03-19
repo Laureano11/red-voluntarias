@@ -17,13 +17,33 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Nombre", name: "name", widget: "string" }
-      - { label: "Edad", name: "age", widget: "string", hint: "Ej: 2 años, 6 meses" }
-      - { label: "Tamaño", name: "size", widget: "select", options: ["Pequeño", "Mediano", "Grande"] }
-      - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "Sexo", name: "sex", widget: "select", options: ["Macho", "Hembra"], hint: "Se muestra con símbolo Marte (♂) o Venus (♀)" }
+      - { label: "Edad", name: "age", widget: "string", hint: "Texto libre: meses, años o ambos" }
+      - label: "Salud"
+        name: "salud"
+        widget: "object"
+        collapsed: false
+        fields:
+          - { label: "Castrado", name: "castrado", widget: "boolean", default: false }
+          - { label: "Desparasitado", name: "desparasitado", widget: "boolean", default: false }
+          - { label: "Vacunado", name: "vacunado", widget: "boolean", default: false }
+      - { label: "Carácter", name: "caracter", widget: "text", hint: "Personalidad y convivencia" }
+      - { label: "Tamaño", name: "size", widget: "select", options: ["Pequeño", "Mediano", "Grande", "Sorpresa"] }
+      - { label: "Observaciones", name: "observaciones", widget: "text", hint: "Requisitos del hogar, otras notas (opcional)" }
       - { label: "Foto", name: "image", widget: "image" }
-      - { label: "Sexo", name: "sex", widget: "select", options: ["Macho", "Hembra"] }
       - { label: "Adoptado", name: "adopted", widget: "boolean", default: false }
-      - { label: "Destacado", name: "featured", widget: "boolean", default: false }
+      - { label: "Destacado (inicio)", name: "featured", widget: "boolean", default: false }
+
+  - name: "en_familia"
+    label: "En familia (ya adoptados)"
+    folder: "src/content/en-familia"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nombre", name: "name", widget: "string" }
+      - { label: "Foto", name: "image", widget: "image", hint: "Una sola imagen del perro en su nuevo hogar o del recuerdo que quieran mostrar" }
 
   - name: "campaigns"
     label: "Campañas"
@@ -39,3 +59,48 @@ collections:
       - { label: "Meta de Donación ($)", name: "goal", widget: "number", value_type: "int" }
       - { label: "Recaudado ($)", name: "raised", widget: "number", value_type: "int", default: 0 }
       - { label: "Activa", name: "active", widget: "boolean", default: true }
+
+  - name: "ventas"
+    label: "Ventas (productos)"
+    folder: "src/content/ventas"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nombre del producto", name: "nombre", widget: "string" }
+      - { label: "Descripción", name: "descripcion", widget: "text" }
+      - { label: "Precio", name: "precio", widget: "string", hint: "Ej: $ 15.000 o ARS 15000" }
+      - { label: "Foto", name: "image", widget: "image" }
+
+  - name: "eventos"
+    label: "Eventos realizados"
+    folder: "src/content/eventos"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { label: "Subtítulo", name: "subtitulo", widget: "string" }
+      - { label: "Descripción", name: "descripcion", widget: "text" }
+      - { label: "Fecha (orden)", name: "fecha", widget: "string", required: false, hint: "AAAA-MM-DD: los más recientes aparecen primero" }
+      - name: "fotos"
+        label: "Fotos"
+        widget: "list"
+        fields:
+          - { label: "Imagen", name: "src", widget: "image" }
+
+  - name: "urgencias"
+    label: "Urgencias"
+    folder: "src/content/urgencias"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "titulo", widget: "string", hint: "Qué se necesita con urgencia" }
+      - { label: "Descripción", name: "descripcion", widget: "text", hint: "Detalle del caso, cómo ayudar, contacto si aplica" }
+      - { label: "Foto", name: "image", widget: "image" }
+      - { label: "Mostrar en el sitio", name: "activo", widget: "boolean", default: true, hint: "Desactivá cuando el caso esté resuelto" }
+      - { label: "Fecha (orden)", name: "fecha", widget: "string", required: false, hint: "AAAA-MM-DD: los más recientes arriba" }

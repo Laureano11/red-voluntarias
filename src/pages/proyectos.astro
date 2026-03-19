@@ -1,0 +1,98 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProyectoBlock from "../components/ProyectoBlock.astro";
+import { proyectos } from "../data/proyectos";
+---
+
+<Layout
+  title="Proyectos"
+  description="Proyectos y campañas que Red Voluntarias fue realizando junto a la comunidad: esterilizaciones, refugios temporales, educación y más."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-primary to-primary-dark py-20 text-white sm:py-28">
+    <div class="pointer-events-none absolute inset-0 opacity-20">
+      <div class="absolute -left-24 top-0 h-72 w-72 rounded-full bg-white blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-secondary blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <span class="inline-block rounded-full bg-white/15 px-4 py-1.5 text-sm font-medium">
+          Lo que hicimos juntos
+        </span>
+        <h1 class="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+          Nuestros proyectos
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-blue-100 sm:text-xl">
+          Cada iniciativa nace de la necesidad del barrio y del compromiso de voluntarios, vecinos y aliados. Acá vas a encontrar un registro de lo que fuimos construyendo con el tiempo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro amigable -->
+  <section class="border-b border-gray-100 bg-white py-12 sm:py-16">
+    <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+      <p class="text-lg leading-relaxed text-gray-600">
+        No somos una ONG gigante con presupuesto ilimitado: somos personas que suman esfuerzos. Estos proyectos son hitos que nos enorgullecen y nos muestran que <strong class="font-semibold text-gray-900">otro cuidado de los animales es posible</strong> cuando la comunidad se organiza.
+      </p>
+      <p class="mt-4 text-base text-gray-500">
+        La lista va creciendo con el tiempo. Si tenés fotos o material de algo en lo que participaste, <a href="/contacto" class="font-semibold text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary">escribinos</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Índice rápido (saltos amigables) -->
+  {proyectos.length > 1 && (
+    <section class="bg-surface py-8">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <p class="text-center text-sm font-semibold uppercase tracking-wider text-gray-500">
+          Ir a un proyecto
+        </p>
+        <nav class="mt-4 flex flex-wrap justify-center gap-2" aria-label="Lista de proyectos">
+          {proyectos.map((p) => (
+            <a
+              href={`#${p.id}`}
+              class="rounded-full bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm ring-1 ring-gray-100 transition hover:bg-primary hover:text-white hover:ring-primary"
+            >
+              {p.titulo.length > 42 ? `${p.titulo.slice(0, 40)}…` : p.titulo}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </section>
+  )}
+
+  <!-- Lista de proyectos -->
+  <section class="bg-surface py-12 sm:py-16 lg:py-20">
+    <div class="mx-auto max-w-4xl space-y-12 px-4 sm:px-6 lg:px-8">
+      {proyectos.map((proyecto, index) => (
+        <ProyectoBlock proyecto={proyecto} index={index} />
+      ))}
+    </div>
+  </section>
+
+  <!-- Cierre -->
+  <section class="bg-white py-16 sm:py-20">
+    <div class="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
+      <span class="text-4xl" aria-hidden="true">🐾</span>
+      <h2 class="mt-4 text-2xl font-extrabold text-gray-900">¿Tenés una idea para un proyecto?</h2>
+      <p class="mt-3 text-gray-600">
+        Muchas de nuestras acciones nacieron de un mensaje de un vecino. Si querés proponer algo o sumarte a organizar, estamos para escucharte.
+      </p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a
+          href="/organiza/como-organizar"
+          class="inline-flex rounded-full bg-primary px-8 py-3 font-semibold text-white shadow-md transition hover:bg-primary-dark"
+        >
+          Organizá con nosotros
+        </a>
+        <a
+          href="/contacto"
+          class="inline-flex rounded-full bg-surface px-8 py-3 font-semibold text-gray-900 ring-1 ring-gray-200 transition hover:shadow-md"
+        >
+          Contacto
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

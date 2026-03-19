@@ -1,0 +1,54 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import EventoRealizado from "../../components/EventoRealizado.astro";
+import { getCollection } from "astro:content";
+
+const items = await getCollection("eventos");
+const sorted = [...items].sort((a, b) => {
+  const fa = a.data.fecha ?? "";
+  const fb = b.data.fecha ?? "";
+  return fb.localeCompare(fa);
+});
+---
+
+<Layout
+  title="Eventos realizados"
+  description="Ferias, talleres y jornadas que hicimos junto a vecinos, escuelas y voluntarios."
+>
+  <section class="relative overflow-hidden bg-gradient-to-br from-indigo-600 to-primary-dark py-20 text-white sm:py-24">
+    <div class="pointer-events-none absolute inset-0 opacity-20">
+      <div class="absolute left-1/3 top-0 h-72 w-72 rounded-full bg-white blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <span class="inline-block rounded-full bg-white/15 px-4 py-1 text-sm font-medium">Organizá con nosotros</span>
+      <h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">Eventos realizados</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-blue-100">
+        Un registro de lo que fuimos haciendo en comunidad. Los textos y fotos se actualizan desde el panel del sitio.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8">
+    {sorted.length > 0 ? (
+      <div class="space-y-14">
+        {sorted.map((entry) => (
+          <EventoRealizado {...entry.data} />
+        ))}
+      </div>
+    ) : (
+      <div class="rounded-2xl border border-dashed border-gray-200 bg-gray-50 py-16 text-center">
+        <p class="text-lg text-gray-600">Todavía no hay eventos publicados.</p>
+        <p class="mt-2 text-sm text-gray-500">Cargalos desde el administrador del sitio.</p>
+      </div>
+    )}
+
+    <div class="mt-14 text-center">
+      <a
+        href="/organiza/como-organizar"
+        class="inline-flex items-center gap-2 rounded-full border-2 border-primary bg-white px-6 py-3 font-semibold text-primary transition hover:bg-primary hover:text-white"
+      >
+        ¿Querés organizar algo con nosotros?
+      </a>
+    </div>
+  </section>
+</Layout>

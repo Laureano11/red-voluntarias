@@ -1,74 +1,243 @@
 ---
 const currentPath = Astro.url.pathname;
 
-const links = [
-  { href: "/", label: "Inicio" },
-  { href: "/adoptar", label: "Adoptá" },
-  { href: "/campanas", label: "Campañas" },
-  { href: "/quienes-somos", label: "Quiénes Somos" },
-  { href: "/contacto", label: "Contacto" },
+type SubItem = { label: string; href: string };
+type NavItem =
+  | { label: string; href: string; children?: never; urgent?: boolean }
+  | { label: string; href?: never; children: SubItem[]; urgent?: boolean };
+
+const navItems: NavItem[] = [
+  { label: "Quiénes somos", href: "/quienes-somos" },
+  {
+    label: "Adopciones",
+    children: [
+      { label: "Adoptar", href: "/adopciones/adoptar" },
+      { label: "En familia", href: "/adopciones/en-familia" },
+      { label: "Orientación para adoptantes", href: "/adopciones/orientacion" },
+    ],
+  },
+  { label: "Proyectos", href: "/proyectos" },
+  {
+    label: "Cómo ayudar",
+    children: [
+      { label: "Donaciones", href: "/como-ayudar/donaciones" },
+      { label: "Voluntariado", href: "/como-ayudar/voluntariado" },
+      { label: "Tránsito", href: "/como-ayudar/transito" },
+      { label: "Hacerte socio", href: "/como-ayudar/hacerte-socio" },
+    ],
+  },
+  {
+    label: "Organiza con nosotros",
+    children: [
+      { label: "Eventos realizados", href: "/organiza/eventos" },
+      { label: "Cómo organizar", href: "/organiza/como-organizar" },
+    ],
+  },
+  { label: "Ventas", href: "/ventas" },
+  { label: "Urgencia", href: "/urgencia", urgent: true },
 ];
+
+function isActive(item: NavItem): boolean {
+  if (item.href) return currentPath === item.href;
+  return item.children?.some((c) => currentPath.startsWith(c.href)) ?? false;
+}
 ---
 
-<header class="bg-white shadow-sm sticky top-0 z-50">
+<header class="sticky top-0 z-50 bg-white shadow-sm">
   <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="flex h-16 items-center justify-between">
-      <a href="/" class="flex items-center gap-2 text-xl font-bold text-primary">
+    <div class="flex h-16 items-center justify-between gap-4">
+
+      <!-- Logo -->
+      <a href="/" class="flex shrink-0 items-center gap-2 text-lg font-extrabold text-primary">
         <span class="text-2xl">🐾</span>
-        Red Voluntarias
+        <span class="hidden sm:inline">Red Voluntarias</span>
       </a>
 
+      <!-- Desktop nav (visible en lg+) -->
+      <ul class="hidden items-center gap-0.5 lg:flex">
+        {navItems.map((item) => (
+          <li class="relative group">
+            {item.href ? (
+              /* Link simple */
+              <a
+                href={item.href}
+                class:list={[
+                  "flex items-center rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                  item.urgent
+                    ? "bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700"
+                    : isActive(item)
+                    ? "bg-primary/10 text-primary"
+                    : "text-gray-600 hover:bg-gray-100 hover:text-gray-900",
+                ]}
+              >
+                {item.urgent && (
+                  <span class="mr-1.5 flex h-2 w-2 shrink-0">
+                    <span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-red-400 opacity-75"></span>
+                    <span class="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span>
+                  </span>
+                )}
+                {item.label}
+              </a>
+            ) : (
+              /* Dropdown */
+              <>
+                <button
+                  class:list={[
+                    "flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                    isActive(item)
+                      ? "bg-primary/10 text-primary"
+                      : "text-gray-600 hover:bg-gray-100 hover:text-gray-900",
+                  ]}
+                  aria-haspopup="true"
+                >
+                  {item.label}
+                  <svg
+                    class="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2.5"
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+
+                <!-- Dropdown panel -->
+                <div class="invisible absolute left-0 top-full min-w-48 translate-y-1 rounded-xl border border-gray-100 bg-white py-1.5 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  {item.children.map((sub) => (
+                    <a
+                      href={sub.href}
+                      class:list={[
+                        "block px-4 py-2 text-sm transition-colors",
+                        currentPath === sub.href
+                          ? "bg-primary/8 font-medium text-primary"
+                          : "text-gray-700 hover:bg-gray-50 hover:text-gray-900",
+                      ]}
+                    >
+                      {sub.label}
+                    </a>
+                  ))}
+                </div>
+              </>
+            )}
+          </li>
+        ))}
+      </ul>
+
+      <!-- Botón hamburguesa (visible en < lg) -->
       <button
         id="mobile-menu-btn"
-        class="inline-flex items-center justify-center rounded-md p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:hidden"
+        class="inline-flex items-center justify-center rounded-md p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 lg:hidden"
         aria-label="Abrir menú"
+        aria-expanded="false"
       >
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        <svg id="icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+        <svg id="icon-close" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
+    </div>
 
-      <ul class="hidden items-center gap-1 md:flex">
-        {links.map(({ href, label }) => (
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="hidden border-t lg:hidden">
+      <ul class="py-2">
+        {navItems.map((item, idx) => (
           <li>
-            <a
-              href={href}
-              class:list={[
-                "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-                currentPath === href
-                  ? "bg-primary/10 text-primary"
-                  : "text-gray-600 hover:bg-gray-100 hover:text-gray-900",
-              ]}
-            >
-              {label}
-            </a>
+            {item.href ? (
+              <a
+                href={item.href}
+                class:list={[
+                  "flex items-center gap-2 px-4 py-2.5 text-base font-medium transition-colors",
+                  item.urgent
+                    ? "text-red-600 hover:bg-red-50"
+                    : isActive(item)
+                    ? "bg-primary/10 text-primary"
+                    : "text-gray-700 hover:bg-gray-50",
+                ]}
+              >
+                {item.urgent && (
+                  <span class="flex h-2 w-2 shrink-0">
+                    <span class="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span>
+                  </span>
+                )}
+                {item.label}
+              </a>
+            ) : (
+              /* Acordeón móvil */
+              <div class="mobile-accordion">
+                <button
+                  class:list={[
+                    "flex w-full items-center justify-between px-4 py-2.5 text-base font-medium transition-colors",
+                    isActive(item)
+                      ? "bg-primary/10 text-primary"
+                      : "text-gray-700 hover:bg-gray-50",
+                  ]}
+                  data-accordion-btn={idx}
+                  aria-expanded="false"
+                >
+                  {item.label}
+                  <svg
+                    class="accordion-chevron h-4 w-4 transition-transform duration-200"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2.5"
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+                <ul class="accordion-panel hidden bg-gray-50">
+                  {item.children.map((sub) => (
+                    <li>
+                      <a
+                        href={sub.href}
+                        class:list={[
+                          "block py-2 pl-8 pr-4 text-sm transition-colors",
+                          currentPath === sub.href
+                            ? "font-medium text-primary"
+                            : "text-gray-600 hover:text-gray-900",
+                        ]}
+                      >
+                        {sub.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </li>
         ))}
       </ul>
     </div>
-
-    <ul id="mobile-menu" class="hidden border-t pb-3 pt-2 md:hidden">
-      {links.map(({ href, label }) => (
-        <li>
-          <a
-            href={href}
-            class:list={[
-              "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
-              currentPath === href
-                ? "bg-primary/10 text-primary"
-                : "text-gray-600 hover:bg-gray-100 hover:text-gray-900",
-            ]}
-          >
-            {label}
-          </a>
-        </li>
-      ))}
-    </ul>
   </nav>
 </header>
 
 <script>
+  // Hamburguesa
   const btn = document.getElementById("mobile-menu-btn");
   const menu = document.getElementById("mobile-menu");
-  btn?.addEventListener("click", () => menu?.classList.toggle("hidden"));
+  const iconOpen = document.getElementById("icon-open");
+  const iconClose = document.getElementById("icon-close");
+
+  btn?.addEventListener("click", () => {
+    const isHidden = menu?.classList.toggle("hidden");
+    iconOpen?.classList.toggle("hidden", !isHidden);
+    iconClose?.classList.toggle("hidden", isHidden ?? true);
+    btn.setAttribute("aria-expanded", String(!isHidden));
+  });
+
+  // Acordeones móviles
+  document.querySelectorAll("[data-accordion-btn]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const panel = button.nextElementSibling as HTMLElement | null;
+      const chevron = button.querySelector(".accordion-chevron");
+      const isOpen = !panel?.classList.contains("hidden");
+
+      panel?.classList.toggle("hidden", isOpen);
+      chevron?.classList.toggle("rotate-180", !isOpen);
+      button.setAttribute("aria-expanded", String(!isOpen));
+    });
+  });
 </script>

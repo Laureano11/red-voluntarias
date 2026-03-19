@@ -1,18 +1,67 @@
 ---
+import { ADOPTION_GOOGLE_FORM_URL } from "../config/adopcion";
+
+interface Salud {
+  castrado: boolean;
+  desparasitado: boolean;
+  vacunado: boolean;
+}
+
 interface Props {
   name: string;
   age: string;
-  size: string;
-  description: string;
+  size: "Pequeño" | "Mediano" | "Grande" | "Sorpresa";
+  caracter: string;
+  observaciones?: string;
   image: string;
-  sex: string;
+  sex: "Macho" | "Hembra";
+  salud: Salud;
   adopted: boolean;
+  featured?: boolean;
+  variant?: "full" | "compact";
+  adoptFormUrl?: string;
 }
 
-const { name, age, size, description, image, sex, adopted } = Astro.props;
+const {
+  name,
+  age,
+  size,
+  caracter,
+  observaciones = "",
+  image,
+  sex,
+  salud,
+  adopted,
+  variant = "full",
+  adoptFormUrl = ADOPTION_GOOGLE_FORM_URL,
+} = Astro.props;
+
+const isCompact = variant === "compact";
+const hasObservaciones = observaciones.trim() !== "";
+
+const isHembra = sex === "Hembra";
+const sexSymbol = sex === "Macho" ? "♂" : "♀";
+const sexLabel = sex === "Macho" ? "Macho (Marte)" : "Hembra (Venus)";
+
+const saludItems = [
+  { key: "castrado" as const, label: "Castrado" },
+  { key: "desparasitado" as const, label: "Desparasitado" },
+  { key: "vacunado" as const, label: "Vacunado" },
+];
+
+function saludPillClasses(ok: boolean) {
+  return ok
+    ? "border-emerald-200 bg-emerald-50 text-emerald-800"
+    : "border-gray-200 bg-gray-100 text-gray-500";
+}
+
+const sizeClasses =
+  size === "Sorpresa"
+    ? "bg-amber-100 text-amber-900 ring-amber-200/80"
+    : "bg-white/90 text-gray-800 ring-black/5";
 ---
 
-<article class="group overflow-hidden rounded-2xl bg-white shadow-md transition-all hover:shadow-xl">
+<article class="dog-card group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-all hover:shadow-xl">
   <div class="relative aspect-square overflow-hidden">
     <img
       src={image}
@@ -22,31 +71,116 @@ const { name, age, size, description, image, sex, adopted } = Astro.props;
     />
     {adopted && (
       <div class="absolute inset-0 flex items-center justify-center bg-black/50">
-        <span class="rounded-full bg-accent px-4 py-2 text-sm font-bold text-white">
-          ¡Adoptado!
-        </span>
+        <span class="rounded-full bg-accent px-4 py-2 text-sm font-bold text-white">¡Adoptado!</span>
       </div>
     )}
-    <span class="absolute right-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-gray-700 shadow-sm">
+    <!-- Único indicador de tamaño (esquina superior derecha) -->
+    <span
+      class:list={[
+        "absolute right-3 top-3 rounded-full px-3 py-1 text-xs font-semibold shadow-sm ring-1",
+        sizeClasses,
+      ]}
+    >
       {size}
     </span>
   </div>
 
-  <div class="p-5">
-    <div class="flex items-center justify-between">
-      <h3 class="text-xl font-bold text-gray-900">{name}</h3>
-      <span class="text-sm text-gray-500">{sex}</span>
+  <div class="flex flex-1 flex-col p-5">
+    <div class="flex items-start justify-between gap-2">
+      <h3
+        class:list={[
+          "text-xl font-bold",
+          isHembra ? "text-pink-600" : "text-primary",
+        ]}
+      >
+        {name}
+      </h3>
+      <span
+        class:list={[
+          "flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-2xl leading-none",
+          isHembra ? "bg-pink-50 text-pink-600" : "bg-surface text-primary",
+        ]}
+        title={sexLabel}
+        aria-label={sexLabel}
+      >
+        {sexSymbol}
+      </span>
     </div>
-    <p class="mt-1 text-sm font-medium text-primary">{age}</p>
-    <p class="mt-3 line-clamp-2 text-sm leading-relaxed text-gray-600">{description}</p>
+
+    <!-- Edad con más peso visual (sin caja aparte: sigue el flujo de la tarjeta) -->
+    <div class="mt-4 border-l-4 border-primary pl-3">
+      <p class="text-[11px] font-bold uppercase tracking-widest text-gray-500">Edad</p>
+      <p class="mt-0.5 text-2xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-[1.75rem]">
+        <span class="text-primary">{age}</span>
+      </p>
+    </div>
+
+    <div class="mt-4 flex flex-wrap gap-2" aria-label="Estado de salud">
+      {saludItems.map(({ key, label }) => (
+        <span
+          class:list={[
+            "rounded-full border px-2.5 py-0.5 text-xs font-semibold",
+            saludPillClasses(salud[key]),
+          ]}
+        >
+          {label}
+        </span>
+      ))}
+    </div>
+
+    <!-- Continuación de la tarjeta: carácter y observaciones al desplegar -->
+    <details class="dog-card__details mt-5 border-t border-gray-100 pt-4">
+      <summary
+        class="flex cursor-pointer list-none items-center justify-between gap-2 py-1 text-left [&::-webkit-details-marker]:hidden"
+      >
+        <span class="text-sm font-semibold text-gray-800">
+          {isCompact ? "Carácter y notas" : "Carácter y observaciones"}
+        </span>
+        <svg
+          class="dog-card__chevron h-4 w-4 shrink-0 text-gray-400 transition-transform duration-200"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2.5"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </summary>
+      <div class="mt-3 space-y-4 text-sm leading-relaxed text-gray-600">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wide text-gray-400">Carácter</span>
+          <p class="mt-1.5">{caracter}</p>
+        </div>
+        {hasObservaciones && (
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wide text-gray-400">Observaciones</span>
+            <p class="mt-1.5">{observaciones}</p>
+          </div>
+        )}
+      </div>
+    </details>
 
     {!adopted && (
-      <a
-        href="/contacto"
-        class="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-dark"
-      >
-        Quiero Adoptarlo
-      </a>
+      <div class="mt-auto pt-4">
+        <a
+          href={adoptFormUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-dark"
+        >
+          Quiero adoptar
+        </a>
+        {!isCompact && (
+          <p class="mt-2 text-center text-xs text-gray-400">Se abre el formulario de solicitud en una pestaña nueva</p>
+        )}
+      </div>
     )}
   </div>
 </article>
+
+<style>
+  .dog-card__details[open] .dog-card__chevron {
+    transform: rotate(180deg);
+  }
+</style>

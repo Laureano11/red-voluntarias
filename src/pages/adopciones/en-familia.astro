@@ -1,0 +1,58 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import FamiliaCard from "../../components/FamiliaCard.astro";
+import { getCollection } from "astro:content";
+
+const entries = await getCollection("enFamilia");
+const sorted = [...entries].sort((a, b) => a.data.name.localeCompare(b.data.name, "es"));
+---
+
+<Layout
+  title="En familia"
+  description="Perros que ya encontraron un hogar definitivo gracias a la adopción responsable."
+>
+  <section class="relative overflow-hidden bg-gradient-to-br from-accent/90 to-emerald-700 py-20 text-white sm:py-24">
+    <div class="pointer-events-none absolute inset-0 opacity-30">
+      <div class="absolute -left-20 top-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-white blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <span class="inline-block rounded-full bg-white/20 px-4 py-1 text-sm font-medium">Historias con final feliz</span>
+      <h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">En familia</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-emerald-50">
+        Estos compañeros ya tienen hogar. Cada foto es un pequeño homenaje a quienes adoptaron con responsabilidad y a quienes ayudaron en el camino.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+    <p class="mx-auto mb-10 max-w-2xl text-center text-gray-600">
+      Este listado se edita desde el panel del sitio: solo hace falta el <strong class="font-semibold text-gray-900">nombre</strong> y una <strong class="font-semibold text-gray-900">foto</strong> por perro.
+    </p>
+
+    {sorted.length > 0 ? (
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {sorted.map((item) => (
+          <FamiliaCard name={item.data.name} image={item.data.image} />
+        ))}
+      </div>
+    ) : (
+      <div class="rounded-2xl border border-dashed border-gray-200 bg-gray-50/80 py-16 text-center">
+        <p class="text-lg text-gray-600">Todavía no hay entradas en esta sección.</p>
+        <p class="mt-2 text-sm text-gray-500">Cuando sumes perros desde el CMS, van a aparecer acá.</p>
+      </div>
+    )}
+
+    <div class="mt-14 text-center">
+      <a
+        href="/adopciones/adoptar"
+        class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-white shadow-md transition hover:bg-primary-dark"
+      >
+        Ver perros en adopción
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>

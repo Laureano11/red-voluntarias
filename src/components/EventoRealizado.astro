@@ -1,0 +1,62 @@
+---
+interface Foto {
+  src: string;
+}
+
+interface Props {
+  titulo: string;
+  subtitulo: string;
+  descripcion: string;
+  fecha?: string;
+  fotos: Foto[];
+}
+
+const { titulo, subtitulo, descripcion, fecha, fotos } = Astro.props;
+
+let fechaLegible = fecha;
+if (fecha && /^\d{4}-\d{2}-\d{2}$/.test(fecha)) {
+  const [y, m, d] = fecha.split("-").map(Number);
+  fechaLegible = new Date(y, m - 1, d).toLocaleDateString("es-AR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
+---
+
+<article class="overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-sm">
+  {fotos.length > 0 && (
+    <div
+      class:list={[
+        "grid gap-1 bg-gray-100",
+        fotos.length === 1 && "grid-cols-1",
+        fotos.length === 2 && "grid-cols-2",
+        fotos.length >= 3 && "grid-cols-2 sm:grid-cols-3",
+      ]}
+    >
+      {fotos.map((foto, i) => (
+        <div class="overflow-hidden">
+          <img
+            src={foto.src}
+            alt={`${titulo} — foto ${i + 1}`}
+            class="aspect-[4/3] h-full w-full object-cover sm:aspect-[3/2]"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+  )}
+
+  <div class="p-6 sm:p-8">
+    {fechaLegible && (
+      <time class="text-xs font-bold uppercase tracking-wider text-primary" datetime={fecha}>
+        {fechaLegible}
+      </time>
+    )}
+    <h2 class:list={[fechaLegible ? "mt-2" : "", "text-2xl font-extrabold text-gray-900 sm:text-3xl"]}>
+      {titulo}
+    </h2>
+    <p class="mt-2 text-lg font-medium text-gray-600">{subtitulo}</p>
+    <p class="mt-4 whitespace-pre-line text-sm leading-relaxed text-gray-600">{descripcion}</p>
+  </div>
+</article>

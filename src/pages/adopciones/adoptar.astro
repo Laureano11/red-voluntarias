@@ -1,0 +1,103 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import DogCard from "../../components/DogCard.astro";
+import { getCollection } from "astro:content";
+
+const allDogs = await getCollection("dogs");
+const availableDogs = allDogs.filter((d) => !d.data.adopted);
+const adoptedDogs = allDogs.filter((d) => d.data.adopted);
+
+const sizeFilters = ["Pequeño", "Mediano", "Grande", "Sorpresa"] as const;
+---
+
+<Layout
+  title="Adoptar"
+  description="Catálogo de perros en adopción. Conocé su carácter, salud y tamaño. Completá el formulario para iniciar el proceso."
+>
+  <Hero
+    title="Adoptar un perro"
+    subtitle="Cada uno tiene su historia. Acá encontrás la información que necesitás para dar el primer paso hacia un hogar responsable."
+  />
+
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <p class="mx-auto mb-10 max-w-2xl text-center text-gray-600">
+      Los datos se actualizan desde el panel del sitio. Si un perro ya no aparece, puede haber encontrado familia o estar en evaluación.
+    </p>
+
+    <!-- Filtros por tamaño -->
+    <div class="mb-10 flex flex-wrap items-center justify-center gap-2 sm:justify-start" id="filters">
+      <span class="w-full text-sm font-medium text-gray-500 sm:w-auto">Filtrar por tamaño:</span>
+      <button
+        type="button"
+        data-filter="all"
+        class="filter-btn rounded-full bg-primary px-4 py-1.5 text-sm font-medium text-white"
+      >
+        Todos
+      </button>
+      {sizeFilters.map((s) => (
+        <button
+          type="button"
+          data-filter={s}
+          class="filter-btn rounded-full bg-gray-200 px-4 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-300"
+        >
+          {s}
+        </button>
+      ))}
+    </div>
+
+    {availableDogs.length > 0 ? (
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" id="dogs-grid">
+        {availableDogs.map((dog) => (
+          <div data-size={dog.data.size}>
+            <DogCard {...dog.data} />
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div class="rounded-2xl bg-white p-12 text-center shadow-sm">
+        <p class="text-xl text-gray-500">No hay perros disponibles en este momento.</p>
+        <p class="mt-2 text-gray-400">Volvé pronto o escribinos por consultas.</p>
+      </div>
+    )}
+
+    {adoptedDogs.length > 0 && (
+      <div class="mt-16">
+        <h2 class="text-2xl font-bold text-gray-900">Ya encontraron hogar</h2>
+        <p class="mt-1 text-gray-500">¡Gracias a quienes adoptaron con responsabilidad!</p>
+        <div class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {adoptedDogs.map((dog) => (
+            <DogCard {...dog.data} />
+          ))}
+        </div>
+      </div>
+    )}
+  </section>
+</Layout>
+
+<script>
+  const buttons = document.querySelectorAll(".filter-btn");
+  const cards = document.querySelectorAll("#dogs-grid > [data-size]");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.getAttribute("data-filter");
+
+      buttons.forEach((b) => {
+        b.classList.remove("bg-primary", "text-white");
+        b.classList.add("bg-gray-200", "text-gray-700");
+      });
+      btn.classList.remove("bg-gray-200", "text-gray-700");
+      btn.classList.add("bg-primary", "text-white");
+
+      cards.forEach((card) => {
+        const el = card as HTMLElement;
+        if (filter === "all" || el.dataset.size === filter) {
+          el.style.display = "";
+        } else {
+          el.style.display = "none";
+        }
+      });
+    });
+  });
+</script>

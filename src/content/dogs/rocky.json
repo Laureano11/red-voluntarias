@@ -1,10 +1,16 @@
 {
   "name": "Rocky",
-  "age": "4 años",
-  "size": "Grande",
-  "description": "Rocky es un perro leal y protector. Se lleva bien con niños y otros perros. Ideal para familias con patio grande.",
-  "image": "/images/dog-placeholder-2.svg",
   "sex": "Macho",
+  "age": "4 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": true,
+    "vacunado": false
+  },
+  "caracter": "Rocky es leal y protector. Se lleva bien con niños y otros perros. Necesita espacio y rutina de ejercicio; ideal para familia con patio.",
+  "size": "Grande",
+  "observaciones": "Tiene la vacuna pendiente de refuerzo anual; la ONG coordina la fecha con el adoptante.",
+  "image": "/images/dog-placeholder-2.svg",
   "adopted": false,
   "featured": true
 }

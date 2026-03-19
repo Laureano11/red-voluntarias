@@ -1,0 +1,160 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import {
+  qrDonacionSrc,
+  mercadoPagoLink,
+  mercadoPagoAlias,
+  aliasCuentaDni,
+  insumosDonacion,
+} from "../../config/donaciones";
+---
+
+<Layout
+  title="Donaciones"
+  description="Doná por Mercado Pago, transferencia o insumos. Cada aporte ayuda a rescatados y campañas de Red Voluntarias."
+>
+  <section class="relative overflow-hidden bg-gradient-to-br from-primary to-primary-dark py-20 text-white sm:py-24">
+    <div class="pointer-events-none absolute inset-0 opacity-15">
+      <div class="absolute left-1/4 top-0 h-64 w-64 rounded-full bg-secondary blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <span class="inline-block rounded-full bg-white/15 px-4 py-1 text-sm font-medium">Cómo ayudar</span>
+      <h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">Donaciones</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-blue-100">
+        Podés apoyarnos con un aporte económico o con insumos que usamos todos los días en rescates, tránsito y campañas.
+      </p>
+    </div>
+  </section>
+
+  <!-- Dinero -->
+  <section class="border-b border-gray-100 bg-white py-14 sm:py-16">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-center text-2xl font-extrabold text-gray-900 sm:text-3xl">Donación en dinero</h2>
+      <p class="mx-auto mt-3 max-w-xl text-center text-gray-600">
+        Escanneá el QR o usá el link y los alias para transferir. Si algo no coincide con lo que te pasamos por mensaje, <a href="/contacto" class="font-semibold text-primary underline decoration-primary/30 underline-offset-2">consultanos</a>.
+      </p>
+
+      <div class="mt-12 grid gap-10 lg:grid-cols-2 lg:items-start">
+        <!-- QR -->
+        <div class="flex flex-col items-center">
+          <p class="mb-4 text-sm font-semibold uppercase tracking-wide text-gray-500">Código QR</p>
+          <div class="rounded-2xl bg-white p-4 shadow-lg ring-1 ring-gray-100">
+            <img
+              src={qrDonacionSrc}
+              alt="Código QR para donar"
+              width="280"
+              height="280"
+              class="h-auto w-full max-w-[280px] rounded-lg"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Links y alias -->
+        <div class="space-y-6">
+          <div class="rounded-2xl border border-gray-100 bg-surface p-6 shadow-sm">
+            <h3 class="font-bold text-gray-900">Mercado Pago</h3>
+            <p class="mt-1 text-sm text-gray-600">Pagá con tarjeta, saldo o dinero en cuenta.</p>
+            <a
+              href={mercadoPagoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#009ee3] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#008ad1] sm:w-auto"
+            >
+              <span class="text-lg" aria-hidden="true">💳</span>
+              Ir a pagar con Mercado Pago
+            </a>
+            <div class="mt-5 border-t border-gray-200 pt-5">
+              <p class="text-xs font-semibold uppercase tracking-wide text-gray-500">Alias Mercado Pago</p>
+              <div class="mt-2 flex flex-col gap-2 sm:flex-row sm:items-center">
+                <code class="flex-1 rounded-lg bg-white px-3 py-2 text-sm font-medium text-gray-800 ring-1 ring-gray-200" id="alias-mp">
+                  {mercadoPagoAlias}
+                </code>
+                <button
+                  type="button"
+                  class="copy-btn shrink-0 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
+                  data-copy={mercadoPagoAlias}
+                  data-feedback="Copiado"
+                >
+                  Copiar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-gray-100 bg-surface p-6 shadow-sm">
+            <h3 class="font-bold text-gray-900">Transferencia / cuenta</h3>
+            <p class="mt-1 text-sm text-gray-600">Alias para transferir por billetera o banco (CVU / alias).</p>
+            <div class="mt-4">
+              <p class="text-xs font-semibold uppercase tracking-wide text-gray-500">Alias de cuenta (DNI / CVU)</p>
+              <div class="mt-2 flex flex-col gap-2 sm:flex-row sm:items-center">
+                <code class="flex-1 rounded-lg bg-white px-3 py-2 text-sm font-medium text-gray-800 ring-1 ring-gray-200" id="alias-dni">
+                  {aliasCuentaDni}
+                </code>
+                <button
+                  type="button"
+                  class="copy-btn shrink-0 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
+                  data-copy={aliasCuentaDni}
+                  data-feedback="Copiado"
+                >
+                  Copiar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insumos -->
+  <section class="bg-surface py-14 sm:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <span class="text-sm font-bold uppercase tracking-wider text-secondary-dark">En especie</span>
+        <h2 class="mt-2 text-2xl font-extrabold text-gray-900 sm:text-3xl">Donación de insumos</h2>
+        <p class="mx-auto mt-3 max-w-2xl text-gray-600">
+          Estas cosas las usamos siempre. Si no estás seguro si sirve, <a href="/contacto" class="font-semibold text-primary underline decoration-primary/30 underline-offset-2">escribinos</a> antes de acercarte.
+        </p>
+      </div>
+
+      <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {insumosDonacion.map((item) => (
+          <li class="flex gap-4 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+            <span class="text-3xl leading-none" aria-hidden="true">{item.emoji}</span>
+            <div class="min-w-0 flex-1">
+              <h3 class="font-bold text-gray-900">{item.nombre}</h3>
+              {item.detalle && <p class="mt-1 text-sm leading-relaxed text-gray-500">{item.detalle}</p>}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-white py-12 text-center">
+    <p class="text-sm text-gray-500">Gracias por pensar en los animales y en quienes trabajan día a día en la red.</p>
+  </section>
+</Layout>
+
+<script>
+  document.querySelectorAll(".copy-btn").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const text = btn.getAttribute("data-copy") ?? "";
+      const feedback = btn.getAttribute("data-feedback") ?? "Copiado";
+      const original = btn.textContent;
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.textContent = feedback;
+        setTimeout(() => {
+          btn.textContent = original;
+        }, 2000);
+      } catch {
+        btn.textContent = "Error";
+        setTimeout(() => {
+          btn.textContent = original;
+        }, 2000);
+      }
+    });
+  });
+</script>
