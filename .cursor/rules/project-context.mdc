@@ -11,7 +11,7 @@ Web institucional de una ONG dedicada al rescate, rehabilitación y adopción re
 
 - **Astro 5** — Framework para sitios estáticos
 - **Tailwind CSS 4** — Estilos con `@tailwindcss/vite`
-- **Decap CMS** — Panel admin para editar contenido sin código
+- **Sveltia CMS** — Panel admin para editar contenido sin código
 
 ## Estructura del Proyecto
 
@@ -136,7 +136,7 @@ Página `/adopciones/en-familia`. Colección CMS independiente y simplificada.
 
 - `npm run dev` — Servidor en localhost:4321
 - `npm run build` — Build estático en ./dist/
-- `npx decap-server` — CMS local
+- CMS: entrar a `/admin` con `npm run dev` corriendo
 
 ## Convenciones
 

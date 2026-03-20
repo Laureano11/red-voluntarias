@@ -26,30 +26,5 @@ const { title, description = "Red de voluntarios dedicados al rescate y adopció
       <slot />
     </main>
     <Footer />
-    <script is:inline>
-      // Si hay un token de Identity en la URL, redirigir a /cuenta/ antes de cargar el sitio completo.
-      // Así el modal se abre sin interferencias de otros scripts.
-      (function () {
-        var h = window.location.hash;
-        if (h && /invite_token|recovery_token|confirmation_token|email_change_token/.test(h)) {
-          window.location.replace("/cuenta/" + h);
-        }
-      })();
-    </script>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" is:inline></script>
-    <script is:inline>
-      (function () {
-        var ni = window.netlifyIdentity;
-        if (!ni) return;
-        ni.on("init", function (user) {
-          if (!user) {
-            ni.on("login", function () {
-              window.location.href = "/admin/";
-            });
-          }
-        });
-        ni.init();
-      })();
-    </script>
   </body>
 </html>

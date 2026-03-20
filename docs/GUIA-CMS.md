@@ -1,6 +1,6 @@
 # Guía del panel de administración (CMS)
 
-Esta guía es para quienes **actualizan el contenido del sitio** (perros, ventas, eventos, etc.) **sin programar**. El sistema se llama **Decap CMS** y el “panel” es una página web con formularios.
+Esta guía es para quienes **actualizan el contenido del sitio** (perros, ventas, eventos, etc.) **sin programar**. El sistema se llama **Sveltia CMS** y el “panel” es una página web con formularios.
 
 ---
 
@@ -12,20 +12,16 @@ Esta guía es para quienes **actualizan el contenido del sitio** (perros, ventas
 2. Entrá a la dirección del sitio y agregá **`/admin`** al final.  
    **Ejemplo:** si el sitio es `https://red-voluntarias.netlify.app`, el panel es  
    `https://red-voluntarias.netlify.app/admin`
-3. Si pide **iniciar sesión**, usá el usuario que te dio quien configuró el sitio (Netlify Identity).  
-   *Si todavía no está configurado el login, quien mantiene el sitio tiene que activar Netlify Identity y Git Gateway.*
-
-4. Si te llegó un **mail de invitación** o de **cambio de contraseña** y el enlace abre una página en **`/cuenta/`**, es normal: ahí debería aparecer la ventana para definir o cambiar la contraseña. Si no ves nada, probá recargar o abrir el link en otra ventana del navegador.
+3. Si pide **iniciar sesión**, ingresá con el método configurado en Sveltia (habitualmente **GitHub**, por token u OAuth).
 
 ### Opción B — En la computadora de casa (solo si alguien técnico lo deja listo)
 
 Hace falta tener el proyecto en la PC y dos ventanas de terminal:
 
-1. En una carpeta del proyecto, ejecutar: `npx decap-server`
-2. En otra: `npm run dev`
-3. En el navegador: **`http://localhost:4321/admin`**
+1. En una carpeta del proyecto, ejecutar: `npm run dev`
+2. En el navegador: **`http://localhost:4321/admin`**
 
-Los cambios se guardan en archivos en la máquina; para que suban al sitio público hace falta **subirlos a Git** (eso lo suele hacer quien despliega el sitio).
+Los cambios se publican a tu repositorio (GitHub). La actualización suele verse al rato.
 
 ---
 
@@ -95,7 +91,7 @@ Solo **nombre** y **foto**. Es independiente del perro “en adopción”: cuand
 
 ## Después de guardar
 
-- **En internet (Netlify + Git):** al publicar, el CMS suele **mandar los cambios al repositorio (GitHub/GitLab)**. El sitio se **vuelve a generar** solo en unos minutos y ya se ve lo nuevo.
+- **En internet (Pages + GitHub):** al publicar, el CMS suele **mandar los cambios al repositorio**. El sitio se **vuelve a generar** solo en unos minutos y ya se ve lo nuevo.
 - Si algo no se ve al instante: esperá 2–5 minutos y recargá la página con **Ctrl+F5** (o borrar caché).
 
 ---
@@ -104,10 +100,10 @@ Solo **nombre** y **foto**. Es independiente del perro “en adopción”: cuand
 
 - Revisá que todas las **fotos** hayan subido bien (a veces falla el tamaño o la conexión).
 - Si un campo es obligatorio y está vacío, el panel puede no dejar guardar.
-- Para dudas técnicas (login, deploy, errores raros), quien mantiene el código o Netlify es quien puede revisar.
+- Para dudas técnicas (login, deploy, errores raros), quien mantiene el código o la configuración del CMS puede revisar.
 
 ---
 
 ## Resumen en una frase para compartir
 
-> *“Entrás a **[tu-sitio]/admin**, iniciás sesión si te la dieron, elegís la sección (Perros, Ventas, Eventos…), tocás crear nuevo, completás el formulario, subís la foto y guardás. Al rato el sitio se actualiza solo.”*
+> *“Entrás a **[tu-sitio]/admin**, iniciás sesión (habitualmente con GitHub), elegís la sección (Perros, Ventas, Eventos…), tocás crear nuevo, completás el formulario, subís la foto y guardás. Al rato el sitio se actualiza solo.”*

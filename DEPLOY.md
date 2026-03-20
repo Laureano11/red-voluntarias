@@ -9,7 +9,7 @@ Instrucciones para levantar y construir el proyecto **Red Voluntarias** en un en
 | Dependencia | Versión mínima | Versión recomendada | Notas |
 |---|---|---|---|
 | **Ubuntu** | 22.04 LTS | 22.04 LTS | Jammy Jellyfish |
-| **Node.js** | 18.17.1 | 22.12.0 | Ver `netlify.toml` y `package.json#engines` |
+| **Node.js** | 18.17.1 | 22.12.0 | Ver `package.json#engines` |
 | **npm** | 9.x | 10.x | Incluido con Node.js |
 | **Git** | 2.x | latest | Para clonar el repositorio |
 
@@ -93,7 +93,7 @@ Dependencias que se instalan:
 
 ## 4. Variables de entorno (si aplica)
 
-El proyecto actualmente no usa un archivo `.env`. Si en el futuro se agregan claves (ej. para Netlify Identity o servicios externos), crear el archivo antes del build:
+El proyecto actualmente no usa un archivo `.env`. Si en el futuro se agregan claves (ej. para servicios externos), crear el archivo antes del build:
 
 ```bash
 cp .env.example .env   # si existe el archivo de ejemplo
@@ -189,40 +189,32 @@ sudo systemctl reload nginx
 
 ---
 
-## 8. Panel de administración (Decap CMS)
+## 8. Panel de administración (Sveltia CMS)
 
-El CMS está disponible en `/admin/` y requiere autenticación con **Netlify Identity** (configurado en `public/admin/config.yml` con `backend: git-gateway`).
+El CMS está disponible en `/admin/` y usa **Sveltia CMS** con backend GitHub (configurado en `public/admin/config.yml`). La autenticación se hace con GitHub (token u OAuth).
 
 Para uso **local** durante el desarrollo:
 
 ```bash
-# En una terminal separada, dentro del proyecto:
-npx decap-server
-
-# En otra terminal:
 npm run dev
 # CMS disponible en http://localhost:4321/admin/
 ```
 
-> En producción el CMS funciona exclusivamente a través de Netlify. Si el deploy es en un servidor propio con Nginx, el panel CMS no estará operativo a menos que se configure un backend alternativo.
+### Deploy en Cloudflare Pages
 
-### Invitaciones y recuperación de contraseña (Identity)
+Para desplegar en **Cloudflare Pages** (recomendado, gratuito con el student pack):
 
-Los mails de Netlify llevan un enlace con un token en el hash (`#invite_token=…`, `#recovery_token=…`, etc.). Ese token lo procesa el **Netlify Identity Widget**. En sitios con más JavaScript en la portada, a veces el modal solo “parpadea” y no se completa el flujo.
+1. En [Cloudflare Dashboard](https://dash.cloudflare.com) → Pages → Create project → Connect to Git
+2. Conectá el repositorio de GitHub `Laureano11/red-voluntarias`
+3. Configuración de build:
+   - Build command: `astro build` (o `npm run build`)
+   - Build output directory: `dist`
+   - Root directory: `/`
+   - Environment variable: `NODE_VERSION` = `22`
 
-En este repo hay una página **mínima** solo para eso: **`/cuenta/`** (`public/cuenta/index.html`), sin otros scripts.
-
-En **Netlify → Project configuration → Identity → Emails**, si podés **personalizar plantillas** (según tu plan), hacé que los enlaces apunten a `/cuenta/` en lugar de la raíz, usando las variables que documenta Netlify, por ejemplo:
-
-- Invitación: `{{ .SiteURL }}/cuenta/#invite_token={{ .Token }}`
-- Recuperar contraseña: `{{ .SiteURL }}/cuenta/#recovery_token={{ .Token }}`
-- Confirmación de registro: `{{ .SiteURL }}/cuenta/#confirmation_token={{ .Token }}`
-- Cambio de mail: `{{ .SiteURL }}/cuenta/#email_change_token={{ .Token }}`
-
-Mientras tanto, el layout del sitio y `/admin/` intentan **abrir el modal a mano** si detectan esos tokens en la URL (`ni.open()` tras `init()`).
+El CMS funciona desde el navegador sin servicios adicionales. Cada editor inicia sesión con su cuenta de GitHub (por token o OAuth).
 
 ---
-
 ## 9. Resumen de comandos
 
 ```bash
@@ -240,8 +232,7 @@ npm run build            # genera ./dist/
 # Previsualizar build
 npm run preview
 
-# CMS local (requiere npm run dev corriendo)
-npx decap-server
+# CMS: con npm run dev, entrar a http://localhost:4321/admin/
 ```
 
 ---

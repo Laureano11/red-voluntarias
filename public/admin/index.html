@@ -7,23 +7,6 @@
     <title>Panel de Administración — Red Voluntarias</title>
   </head>
   <body>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-      (function () {
-        var ni = window.netlifyIdentity;
-        if (!ni) return;
-        ni.on("init", function () {});
-        ni.init();
-        function openIfToken() {
-          var h = window.location.hash;
-          if (h && /invite_token|recovery_token|confirmation_token|email_change_token/.test(h)) {
-            ni.open();
-          }
-        }
-        setTimeout(openIfToken, 50);
-        setTimeout(openIfToken, 400);
-      })();
-    </script>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
   </body>
 </html>

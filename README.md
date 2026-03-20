@@ -6,7 +6,7 @@ Web institucional de Red Voluntarias, una ONG dedicada al rescate, rehabilitaci�
 
 - **Astro** — Framework para generar sitios estáticos ultrarrápidos
 - **Tailwind CSS 4** — Estilos utilitarios con bajo peso final
-- **Decap CMS** — Panel de administración visual para editar contenido sin tocar código
+- **Sveltia CMS** — Panel de administración visual para editar contenido sin tocar código
 
 ## Requisitos
 
@@ -49,20 +49,17 @@ src/
 
 ## Gestión de contenido (CMS)
 
-El sitio usa [Decap CMS](https://decapcms.org/) para gestionar el contenido visualmente.
+El sitio usa [Sveltia CMS](https://sveltiacms.app/) para gestionar el contenido visualmente.
 
 ### Acceder al panel
 
-1. Desplegá el sitio en Netlify
-2. Habilitá **Netlify Identity** y **Git Gateway** en la configuración del sitio
-3. Accedé al panel en `https://tu-sitio.netlify.app/admin`
+1. Desplegá el sitio en **Cloudflare Pages** (o cualquier host estático que sirva la carpeta `dist/`).
+2. Entrá al panel en `https://tu-sitio.com/admin`.
+3. Iniciá sesión con el método configurado en Sveltia (habitualmente **GitHub**, por token u OAuth).
 
 ### Desarrollo local con CMS
 
-Para usar el CMS en modo local:
-
 ```bash
-npx decap-server &
 npm run dev
 ```
 
@@ -83,12 +80,14 @@ Ver **[docs/GUIA-CMS.md](./docs/GUIA-CMS.md)** — pasos para entrar a `/admin`,
 
 ## Deploy
 
-El sitio se puede desplegar en **Netlify** o **Vercel** de forma gratuita:
+El sitio se puede desplegar en **Cloudflare Pages** de forma gratuita:
 
-1. Conectá tu repositorio de GitHub
-2. Build command: `npm run build`
-3. Publish directory: `dist`
-4. Para usar el CMS en producción (Netlify): habilitá Identity y Git Gateway
+1. Conectá tu repositorio de GitHub al proyecto en Cloudflare Pages
+2. Build command: `astro build` (o `npm run build`)
+3. Build output directory: `dist`
+4. Node.js version: 22 (configurar en Environment variables si hace falta)
+
+El CMS funciona desde el navegador con backend GitHub (Sveltia). No hace falta configuración adicional.
 
 ## Licencia
 

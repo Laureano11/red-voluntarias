@@ -1,10 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Laureano11/red-voluntarias
   branch: main
 
-local_backend: true
-
-media_folder: "public/images"
+media_folder: /public/images
 public_folder: "/images"
 
 collections:

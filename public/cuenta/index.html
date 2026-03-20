@@ -32,32 +32,11 @@
   <body>
     <div>
       <p>
-        Debería abrirse una ventana para completar el registro o la contraseña. Si no pasa, esperá unos segundos o recargá la página. Después podés ir al
-        <a href="/admin/">panel de administración</a>.
+        Esta ruta era necesaria para Netlify Identity. El panel de administración ahora usa Sveltia CMS, así que no hace falta este paso.
+      </p>
+      <p>
+        Entrá directamente a <a href="/admin/">/admin/</a> para iniciar sesión y editar contenido.
       </p>
     </div>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-      (function () {
-        var ni = window.netlifyIdentity;
-        if (!ni) return;
-        ni.on("init", function (user) {
-          if (!user) {
-            ni.on("login", function () {
-              window.location.replace("/admin/");
-            });
-          }
-        });
-        ni.init();
-        function openIfToken() {
-          var h = window.location.hash;
-          if (h && /invite_token|recovery_token|confirmation_token|email_change_token/.test(h)) {
-            ni.open();
-          }
-        }
-        setTimeout(openIfToken, 50);
-        setTimeout(openIfToken, 400);
-      })();
-    </script>
   </body>
 </html>
