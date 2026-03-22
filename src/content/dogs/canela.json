@@ -1,16 +1,16 @@
 {
-  "name": "Canela",
+  "name": "Manchita",
   "sex": "Hembra",
-  "age": "8 meses",
+  "age": "9 Años",
   "salud": {
-    "castrado": false,
+    "castrado": true,
     "desparasitado": true,
     "vacunado": true
   },
-  "caracter": "Canela es una cachorrita llena de energía. Le encanta jugar con pelotas y aprender trucos nuevos. Se adapta bien a departamento si le dan paseos diarios.",
+  "caracter": "Es la gata mas linda del mundo",
   "size": "Pequeño",
   "observaciones": "Ideal para familia sin otros perros grandes o con introducción gradual.",
-  "image": "/images/dog-placeholder-3.svg",
+  "image": "/images/F97DE08D-1359-4DC7-AF5A-BAF9CE7ACBA5.jpeg",
   "adopted": false,
   "featured": true
 }
