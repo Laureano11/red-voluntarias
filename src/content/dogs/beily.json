@@ -1,0 +1,16 @@
+{
+  "name": "Beily",
+  "sex": "Hembra",
+  "age": "2 años aprox",
+  "salud": {
+    "castrado": true,
+    "desparasitado": true,
+    "vacunado": false
+  },
+  "caracter": "Es super sociales, sabe pasear con correa.",
+  "size": "Pequeño",
+  "observaciones": ".",
+  "image": "/images/WhatsApp Image 2026-03-19 at 10.22.51.jpeg",
+  "adopted": false,
+  "featured": true
+}
