@@ -31,5 +31,16 @@ export const insumosDonacion: InsumoDonacion[] = [
   { emoji: "🪣", nombre: "Baldes, mopas, lavandinas", detalle: "Limpieza de espacios comunes." },
   { emoji: "🧸", nombre: "Juguetes", detalle: "Resistentes; evitar piezas muy pequeñas que se traguen." },
   { emoji: "💊", nombre: "Medicamentos", detalle: "Solo si están en fecha y con indicación; consultanos antes." },
+  {
+    emoji: "🩺",
+    nombre: "Medicamentos que más usamos",
+    detalle:
+      "Doxiciclina, Optamox Duo, curabichera, prednisolona, enrofloxacina, protectores gástricos, Tribiotic, antidesparasitarios, tramadol, multivitamínicos.",
+  },
+  { emoji: "🧴", nombre: "Suero y vías", detalle: "Sueros, vías para sueros y agujas." },
+  { emoji: "🩹", nombre: "Pervinox", detalle: "Antiséptico para curaciones." },
+  { emoji: "🐾", nombre: "Pipetas", detalle: "Antipulgas y garrapatas." },
+  { emoji: "🛏️", nombre: "Camitas y cuchas", detalle: "En buen estado y limpias." },
+  { emoji: "🧺", nombre: "Sábanas, toallones y colchas", detalle: "Todo limpio, para tránsito y caniles." },
   { emoji: "📍", nombre: "Otro", detalle: "Escribinos por WhatsApp o contacto si tenés algo que no está en la lista." },
 ];

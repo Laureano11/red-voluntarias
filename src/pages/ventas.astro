@@ -12,18 +12,26 @@ const ordenados = [...productos].sort((a, b) =>
 
 <Layout
   title="Ventas"
-  description="Productos solidarios a la venta. Coordiná tu compra por Instagram: cada compra ayuda a los rescates."
+  description="Nuestra tienda solidaria: cada compra ayuda con alimento, medicamentos y refugio."
 >
   <section class="relative overflow-hidden bg-gradient-to-br from-secondary/90 to-amber-500 py-20 text-gray-900 sm:py-24">
     <div class="pointer-events-none absolute inset-0 opacity-30">
       <div class="absolute right-1/4 top-0 h-64 w-64 rounded-full bg-white blur-3xl"></div>
     </div>
     <div class="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-      <span class="inline-block rounded-full bg-white/50 px-4 py-1 text-sm font-semibold">Solidarias</span>
+      <span class="inline-block rounded-full bg-white/50 px-4 py-1 text-sm font-semibold">Nuestra tienda solidaria</span>
       <h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">Ventas</h1>
       <p class="mx-auto mt-5 max-w-2xl text-lg font-medium text-gray-800">
-        Acá mostramos lo que suele haber disponible. <strong class="font-bold">No vendemos por esta web:</strong> el catálogo se actualiza desde el panel y coordinás la compra por Instagram.
+        Todo lo que ves acá tiene un propósito: transformar cada compra en alimento, medicamentos y refugio para los callejeritos. Explorá el catálogo actualizado y, para coordinar tu compra o consultar stock, escribinos por Instagram.
       </p>
+      <a
+        href={VENTAS_INSTAGRAM_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-5 inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-semibold text-gray-900 transition hover:bg-white"
+      >
+        @red_de_voluntarias
+      </a>
     </div>
   </section>
 
@@ -57,7 +65,7 @@ const ordenados = [...productos].sort((a, b) =>
         </svg>
         Comprar
       </a>
-      <p class="mt-4 text-xs text-blue-200">Te lleva a Instagram en una pestaña nueva.</p>
+      <p class="mt-4 text-xs text-blue-200">Gracias por sumarte a nuestra red. Comprando acá, sos parte de la solución.</p>
     </div>
   </section>
 </Layout>

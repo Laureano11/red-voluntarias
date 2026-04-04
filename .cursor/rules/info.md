@@ -119,3 +119,134 @@ TRÁNSITOS
 
 https://forms.gle/2a5zwZZh4ELAWa5m7
 QUIERO SER VOLUNTARIA DE LA RED
+
+
+### ORganiza con nosotros
+
+Organizá un evento con nosotras
+"Alianzas que dejan huella: Tu emprendimento/comercio + Nuestros callejeritos"
+Sabemos que la unión hace la fuerza. Somos una red de voluntarias dedicada a transformar la vida de los perros callejeros, y buscamos aliados que quieran abrir sus puertas para generar un impacto real.
+Organizar un evento solidario no solo ayuda a recaudar fondos para rescates y salud animal, sino que también posiciona a tu negocio como un referente solidario, atrae nuevos clientes y llena tu local de buena energía.
+Qué podemos hacer juntos (Iconos o Lista)
+🏃‍♀️ Correcaminatas: Eventos deportivos al aire libre que movilizan a familias y mascoteros.
+🧘‍♂️ Clases Solidarias: Jornadas de Yoga, Baile o Fitness donde parte de la  entrada es a beneficio.
+☕ Meriendas & "Un Café por una Patita": Tardes de té o café con música en vivo para disfrutar ayudando.
+🎸 Festivales y Bingos: Eventos con bandas, sorteos y mucha convocatoria de vecinos.
+🛍️ Ferias de Emprendedores: Espacios compartidos para potenciar el comercio local.
+ 
+"Ya hemos realizado festivales con bandas en vivo y tardes de té que fueron un éxito total de convocatoria".
+
+¿Tenés un emprendimiento, café o salón y querés sumarte?
+ Escribinos y organizamos algo increíble juntos. ¡A tu negocio le sirve, a los callejeritos les salva la vida!
+[BOTÓN: ¡Quiero ser un comercio aliado!]
+
+
+### Proyectos 
+
+PROYECTOS
+Nuestros Proyectos: El reflejo de una gran red
+Nuestros proyectos son el registro de lo que podemos lograr cuando la comunidad se organiza. Cada uno de estos puntos representa horas de trabajo voluntario y compromiso por los callejeritos.
+Cada uno de nuestros proyectos nace de un compromiso real con las necesidades de nuestra comunidad. En este espacio, compartimos el registro de lo que hemos construido con el tiempo: una estructura de trabajo sostenida por el esfuerzo y la dedicación voluntaria,transformando la voluntad en soluciones concretas .
+Somos una red de personas que donan su tiempo y capacidad para demostrar que, con gestión y responsabilidad, otro cuidado de los animales es posible. Nuestra labor sigue creciendo día a día; si pensas que podemos encarar algún proyecto juntos, no dudes en contactarnos.
+ ¡Tu aporte es clave para seguir transformando su realidad!
+
+
+
+### Proyectos realizados 
+
+- Puntos de Reciclaje: Apartado específico para el canje de bolsas vacías de Old Prince y Kongo. 
+
+Reciclaje Solidario: Transformá tus bolsas en alimento ♻️🐾
+Gracias a tu colaboración, los envases vacíos dejan de ser residuos y se convierten en raciones para los callejeritos.
+¿Cómo funciona?
+Por cada bolsa vacía de las marcas Old Prince o Kongo que nos entregues, la empresa nos dona 1 kg de alimento balanceado. Es una forma simple y sustentable de ayudarnos a sostener los caniles y tránsitos. 
+¿Dónde entregarlas?
+Si estás en Capital Federal, podés coordinar la entrega de tus bolsas vacías (limpias y secas, por favor) contactándote directamente por WhatsApp:
+👉 Escribinos al 11 6451-5000
+Tu compromiso ambiental se transforma en un plato de comida. ¡Sumate!
+
+
+
+1. TRANSPORTADORAS SUSTENTABLES
+Título: Innovación con conciencia ambiental
+Subtítulo: Creación de soluciones de transporte utilizando materiales reciclados para cuidar al planeta y a los animales.
+Detrás de nuestras transportadoras hay una red de amor: familias y voluntarios que ponen su tiempo y oficio para transformar residuos en herramientas que salvan vidas. Estas unidades nacieron al observar el estrés y el riesgo de escape de los gatitos que llegan a castración; hoy, son la solución para una espera segura y un traslado sin heridas.
+Lo que tenés que saber:
+Sustentables: Reutilizamos bidones de 20 litros (jabón, aceite, cloro). Nunca usamos bidones de agroquímicos.
+Resistentes: Soportan hasta 15 kg y pasan por un proceso exhaustivo de lavado. (Medidas: 37x22 cm aprox).
+Solidarias: Cada transportadora que adquirís se transforma directamente en una atención veterinaria o una vacuna para un callejerito.
+📍 Disponibles en Carmen de Areco, CABA y Arrecifes. Podés abonar en efectivo, transferencia o Cuenta DNI.
+
+2. NO MÁS PERROS EN EL BASURAL
+Título: UNA VIDA NO ES BASURA
+Subtítulo: Logramos sacar a todos los animales del basural y protegemos el predio con cámaras y señalización para evitar nuevos abandonos.
+El basural de Carmen de Areco dejó de ser un lugar de olvido. Tras un intenso trabajo de rescate, logramos vaciar el predio de animales, pero nuestro compromiso no terminó ahí. Para que la historia no se repita, instalamos cámaras de seguridad y cartelería clara: una vida no es desperdicio. Custodiamos el lugar para asegurar que ningún perro vuelva a ser abandonado a su suerte en condiciones inhumanas.
+
+3. CASTRACIONES POR LOS BARRIOS
+Título: Salud animal en cada rincón
+Subtítulo: Censo y operativos de castración gratuitos realizados en conjunto con el área de Zoonosis Municipal de Carmen de Areco.
+Atacamos el problema de raíz: el abandono comienza con la reproducción sin control. Nuestro equipo de voluntarias recorre los barrios casa por casa, realizando censos y ganando la confianza de los animales que "no son de nadie".
+Nuestro impacto:
+Trabajo de campo: Identificamos zonas con sobrepoblación, completamos formularios y coordinamos con Zoonosis Municipal.
+Resultados reales: En jornadas recientes logramos castrar más de 20 animales en un solo día, ¡lo que evita miles de nacimientos no deseados en el futuro!
+Salud: Castrar previene cáncer de útero, mama, testículos y mejora la calidad de vida de tu mascota.
+Castrar es un acto de responsabilidad ciudadana. Es la única salida real para terminar con el sufrimiento en las calles.
+
+4. VISIBILIDAD AL REFUGIO MUNICIPAL
+Título: Una imagen es su única oportunidad
+Subtítulo: Jornadas de fotos y videos para que los perros del refugio dejen de ser invisibles y encuentren un hogar.
+El refugio no es un hogar, es un lugar de paso que muchas veces se convierte en una condena. Hoy hay más de 120 perros esperando una caricia que nunca llega. Ellos no eligieron estar ahí; son víctimas de la indiferencia.
+Nuestras voluntarias dedican sus tardes a entrar a esos caniles para recargarlos de energía, pero sobre todo, para capturar su esencia. A través de fotos y videos profesionales, mostramos sus caritas al mundo. Una imagen bien lograda es, muchas veces, la única llave que tienen para abrir la puerta de esa "cárcel" y finalmente conocer el calor de una familia.
+
+ 5. ALCANCIAS COMUNITARIAS
+Título: Pequeños aportes, grandes cambios
+Subtítulo: Una iniciativa del Centro de Día para fomentar la solidaridad vecinal y sostener nuestras actividades diarias.
+Este proyecto nace de la colaboración con los concurrentes del Centro de Día “Inés María Enjo”, quienes fabrican y gestionan las alcancías para ayudar a los perros callejeros
+Más que una recaudación:
+A través de esta tarea, los concurrentes potencian su autonomía, responsabilidad y estimulación cognitiva mediante el manejo del dinero y el manejo en la vía pública. Ellos son los únicos encargados de retirar las alcancías de los comercios amigos.
+Transparencia total:
+Todo lo recaudado se destina a la Red de Voluntarias para la atención de los animales más vulnerables. 
+
+¡Si tenés un comercio, ayudanos poniendo la alcancía a la vista y cuidando el aporte de los vecinos!
+
+6. CONCIENTIZACION EN JARDINES
+Título: Sembrando respeto desde la infancia
+Subtítulo: Charlas y actividades educativas en jardines de infantes sobre el cuidado responsable y el amor por los animales.
+Creemos firmemente que los niños son la semilla de un mundo mejor. Por eso, visitamos los jardines de infantes de Carmen de Areco para conversar sobre la tenencia responsable y el respeto hacia todos los seres sintientes.
+Educando con el corazón:
+Agradecemos profundamente a las docentes y a instituciones como el Jardín 901, que nos abren sus puertas para enseñar a los más chicos a empatizar, cuidar y amar a los animales. Tal vez no veamos hoy el futuro ideal que soñamos, pero lo estamos construyendo cada vez que un niño aprende que un animal merece respeto.
+Sembrar conciencia hoy es la base para que mañana no haya más callejeritos.
+
+
+
+
+
+
+### Donaciones
+
+
+
+Dejar lo que están y con esa descripción, estan perfectos
+ y sumar estos: 
+
+MEDICAMENTOS QUE MÁS USAMOS; DOXICICLINA,OPTAMOX DUO  CURABICHERA, PREDNISOLONA, ENROFLOXACINA, PROTECTORES GASTRICOS, TRIBIOTIC.ANTIDESPARASITARIOS, TRAMADOL, MULTIVITAMINICOS.
+
+AGREGAR: GUANTES, SUEROS, VÍAS PARA SUEROS, AGUJAS,PERVINOX,PIPETAS, CAMITAS, CUCHAS,SABANAS,TOALLONES,COLCHAS,(TODO LIMPIO)
+
+
+### VEntas 
+VENTAS: 
+
+Título: Nuestra Tienda Solidaria
+
+Subtítulo: Todo lo que ves acá tiene un propósito: transformar cada compra en alimento, medicamentos y refugio para los callejeritos. Explorá nuestro catálogo actualizado y, para coordinar tu compra o consultar stock, escribinos directamente por mensaje privado a nuestro Instagram.
+
+ ¡Gracias por sumarte a nuestra red!
+Comprando acá, sos parte de la solución
+
+QUE EL LINK PARA INGRESAR IG ESTE A LA VIST
+
+
+### URgente 
+
+Hay situaciones que no pueden esperar. Acá publicamos casos críticos que necesitan de nuestra red hoy mismo: tránsitos, traslados, medicinas o ayuda económica. ¡Cada minuto cuenta para ellos
