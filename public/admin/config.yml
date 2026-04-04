@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms@0.148.1/schema/sveltia-cms.json
 backend:
   name: github
   repo: Laureano11/red-voluntarias

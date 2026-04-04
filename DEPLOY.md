@@ -214,6 +214,28 @@ Para desplegar en **Cloudflare Pages** (recomendado, gratuito con el student pac
 
 El CMS funciona desde el navegador sin servicios adicionales. Cada editor inicia sesión con su cuenta de GitHub (por token o OAuth).
 
+### Si GitHub dice que no tenés acceso al repositorio
+
+Ese mensaje lo devuelve la API de GitHub: el **token** (o la cuenta con la que lo generaste) no tiene permiso sobre el repo **`Laureano11/red-voluntarias`**. No es un bug del sitio.
+
+1. **Token *fine-grained* (recomendado):** GitHub → Settings → Developer settings → Fine-grained personal access tokens → Generate.  
+   - **Resource owner:** la cuenta que es dueña del repo (`Laureano11`).  
+   - **Repository access:** solo `red-voluntarias` (o “All repositories”).  
+   - **Permissions:** Repository → **Contents: Read and write**; **Metadata: Read** (suele venir por defecto).  
+   Generá uno nuevo, copiá el token una sola vez y en el panel elegí **Sign in with token**.
+
+2. **Token *classic*:** mismo menú → **Tokens (classic)** → scope **`repo`** (necesario si el repo es privado).
+
+3. **Token expirado o revocado:** si el de ayer dejó de servir, hay que **crear otro**; GitHub no muestra el valor viejo.
+
+4. **Cuenta equivocada:** el token queda asociado a la cuenta con la que entraste a GitHub al crearlo. Tiene que ser la que tiene el repo `Laureano11/red-voluntarias`.
+
+5. **Navegador:** probá ventana de incógnito o borrar datos del sitio para tu dominio (por si quedó guardado un token viejo en el almacenamiento local).
+
+### Editar contenido en local sin GitHub (solo desarrollo)
+
+En **Chrome / Edge / Brave** (no Safari): con `npm run dev` abrí **`http://localhost:4321/admin/index.html`**, tocá **Work with Local Repository** y elegí la carpeta raíz del proyecto. Editás archivos en disco y hacés `git commit` / `push` vos mismo. No hace falta PAT para ese flujo.
+
 ---
 ## 9. Resumen de comandos
 
@@ -246,3 +268,4 @@ npm run preview
 | Nginx devuelve 404 en rutas internas | Falta la directiva `try_files` | Verificar la config del virtual host (sección 7.3) |
 | Build falla con errores de Zod | JSON de contenido inválido | Revisar los archivos en `src/content/` contra los esquemas en `src/content.config.ts` |
 | Puerto 4321 bloqueado | Firewall de Ubuntu | `sudo ufw allow 4321/tcp` (solo para dev) |
+| CMS: “no tenés acceso al repositorio” | PAT de otra cuenta, expirado, o sin permiso **Contents** en `Laureano11/red-voluntarias` | Ver subsección **Si GitHub dice que no tenés acceso** arriba; regenerar token con permisos correctos o usar **Work with Local Repository** en local |

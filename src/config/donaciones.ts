@@ -3,17 +3,14 @@
  * Reemplazá valores de ejemplo cuando tengas los reales.
  */
 
-/** Ruta a la imagen del QR (subí el PNG/JPG a public/images/) */
-export const qrDonacionSrc = "/images/donaciones-qr-placeholder.svg";
+/** Alias de cuenta bancaria */
+export const aliasCuenta = "reddevoluntarias.cda";
 
-/** Link de pago / cobro de Mercado Pago */
-export const mercadoPagoLink = "https://mpago.la/REEMPLAZAR";
+/** CBU de cuenta bancaria */
+export const cbuCuenta = "0140328003714052110507";
 
-/** Alias de Mercado Pago */
-export const mercadoPagoAlias = "redvoluntarias.mp";
-
-/** Alias de cuenta bancaria / CVU (transferencia por DNI u otro medio) */
-export const aliasCuentaDni = "red.voluntarias.dni";
+/** Titular de la cuenta bancaria */
+export const titularCuenta = "Morena Tatiana Guaquinchay";
 
 export type InsumoDonacion = {
   emoji: string;

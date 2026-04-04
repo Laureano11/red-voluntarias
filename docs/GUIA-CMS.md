@@ -19,9 +19,21 @@ Esta guía es para quienes **actualizan el contenido del sitio** (perros, ventas
 Hace falta tener el proyecto en la PC y dos ventanas de terminal:
 
 1. En una carpeta del proyecto, ejecutar: `npm run dev`
-2. En el navegador: **`http://localhost:4321/admin`**
+2. En el navegador: **`http://localhost:4321/admin/index.html`** (mejor que solo `/admin` para que el CMS cargue bien).
 
 Los cambios se publican a tu repositorio (GitHub). La actualización suele verse al rato.
+
+---
+
+## Si GitHub dice que no tenés acceso al repositorio
+
+Eso no es un fallo del panel: el **token de acceso personal** (o la cuenta con la que lo creaste) no tiene permiso sobre el repo del sitio en GitHub, o el token expiró.
+
+1. **Generá un token nuevo** en GitHub (Settings → Developer settings → Personal access tokens).  
+   - Si usás **Token granular (fine-grained):** elegí el repo del sitio y permisos **Contents: lectura y escritura**.  
+   - Si usás **Token clásico:** marcá el permiso **`repo`** si el repositorio es privado.
+2. En el panel, iniciá sesión con **Sign in with token** y pegá el token nuevo.
+3. **Opción sin token (solo en tu PC, con Chrome/Edge):** con `npm run dev` abrí **`/admin/index.html`**, tocá **Work with Local Repository** y elegí la carpeta del proyecto. Los cambios quedan en archivos locales; después alguien con Git hace commit y push.
 
 ---
 

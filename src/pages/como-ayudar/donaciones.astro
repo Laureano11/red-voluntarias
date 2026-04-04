@@ -1,12 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import {
-  qrDonacionSrc,
-  mercadoPagoLink,
-  mercadoPagoAlias,
-  aliasCuentaDni,
-  insumosDonacion,
-} from "../../config/donaciones";
+import { aliasCuenta, cbuCuenta, titularCuenta, insumosDonacion } from "../../config/donaciones";
 ---
 
 <Layout
@@ -31,70 +25,59 @@ import {
     <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
       <h2 class="text-center text-2xl font-extrabold text-gray-900 sm:text-3xl">Donación en dinero</h2>
       <p class="mx-auto mt-3 max-w-xl text-center text-gray-600">
-        Escanneá el QR o usá el link y los alias para transferir. Si algo no coincide con lo que te pasamos por mensaje, <a href="/contacto" class="font-semibold text-primary underline decoration-primary/30 underline-offset-2">consultanos</a>.
+        Por ahora recibimos donaciones por transferencia bancaria. Si algo no coincide con lo que te pasamos por mensaje, <a href="/contacto" class="font-semibold text-primary underline decoration-primary/30 underline-offset-2">consultanos</a>.
       </p>
 
-      <div class="mt-12 grid gap-10 lg:grid-cols-2 lg:items-start">
-        <!-- QR -->
-        <div class="flex flex-col items-center">
-          <p class="mb-4 text-sm font-semibold uppercase tracking-wide text-gray-500">Código QR</p>
-          <div class="rounded-2xl bg-white p-4 shadow-lg ring-1 ring-gray-100">
-            <img
-              src={qrDonacionSrc}
-              alt="Código QR para donar"
-              width="280"
-              height="280"
-              class="h-auto w-full max-w-[280px] rounded-lg"
-              loading="lazy"
-            />
-          </div>
-        </div>
+      <div class="mt-12">
+        <div class="rounded-2xl border border-gray-100 bg-surface p-6 shadow-sm">
+          <h3 class="font-bold text-gray-900">Transferencia bancaria</h3>
+          <p class="mt-1 text-sm text-gray-600">Alias, CBU y titular para transferir desde billetera o banco.</p>
 
-        <!-- Links y alias -->
-        <div class="space-y-6">
-          <div class="rounded-2xl border border-gray-100 bg-surface p-6 shadow-sm">
-            <h3 class="font-bold text-gray-900">Mercado Pago</h3>
-            <p class="mt-1 text-sm text-gray-600">Pagá con tarjeta, saldo o dinero en cuenta.</p>
-            <a
-              href={mercadoPagoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#009ee3] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#008ad1] sm:w-auto"
-            >
-              <span class="text-lg" aria-hidden="true">💳</span>
-              Ir a pagar con Mercado Pago
-            </a>
-            <div class="mt-5 border-t border-gray-200 pt-5">
-              <p class="text-xs font-semibold uppercase tracking-wide text-gray-500">Alias Mercado Pago</p>
+          <div class="mt-5 space-y-4">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wide text-gray-500">Alias</p>
               <div class="mt-2 flex flex-col gap-2 sm:flex-row sm:items-center">
-                <code class="flex-1 rounded-lg bg-white px-3 py-2 text-sm font-medium text-gray-800 ring-1 ring-gray-200" id="alias-mp">
-                  {mercadoPagoAlias}
+                <code class="flex-1 rounded-lg bg-white px-3 py-2 text-sm font-medium text-gray-800 ring-1 ring-gray-200" id="alias-cuenta">
+                  {aliasCuenta}
                 </code>
                 <button
                   type="button"
                   class="copy-btn shrink-0 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
-                  data-copy={mercadoPagoAlias}
+                  data-copy={aliasCuenta}
                   data-feedback="Copiado"
                 >
                   Copiar
                 </button>
               </div>
             </div>
-          </div>
 
-          <div class="rounded-2xl border border-gray-100 bg-surface p-6 shadow-sm">
-            <h3 class="font-bold text-gray-900">Transferencia / cuenta</h3>
-            <p class="mt-1 text-sm text-gray-600">Alias para transferir por billetera o banco (CVU / alias).</p>
-            <div class="mt-4">
-              <p class="text-xs font-semibold uppercase tracking-wide text-gray-500">Alias de cuenta (DNI / CVU)</p>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wide text-gray-500">CBU</p>
               <div class="mt-2 flex flex-col gap-2 sm:flex-row sm:items-center">
-                <code class="flex-1 rounded-lg bg-white px-3 py-2 text-sm font-medium text-gray-800 ring-1 ring-gray-200" id="alias-dni">
-                  {aliasCuentaDni}
+                <code class="flex-1 rounded-lg bg-white px-3 py-2 text-sm font-medium text-gray-800 ring-1 ring-gray-200" id="cbu-cuenta">
+                  {cbuCuenta}
                 </code>
                 <button
                   type="button"
                   class="copy-btn shrink-0 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
-                  data-copy={aliasCuentaDni}
+                  data-copy={cbuCuenta}
+                  data-feedback="Copiado"
+                >
+                  Copiar
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wide text-gray-500">Titular</p>
+              <div class="mt-2 flex flex-col gap-2 sm:flex-row sm:items-center">
+                <code class="flex-1 rounded-lg bg-white px-3 py-2 text-sm font-medium text-gray-800 ring-1 ring-gray-200" id="titular-cuenta">
+                  {titularCuenta}
+                </code>
+                <button
+                  type="button"
+                  class="copy-btn shrink-0 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
+                  data-copy={titularCuenta}
                   data-feedback="Copiado"
                 >
                   Copiar
