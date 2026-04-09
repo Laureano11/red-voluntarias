@@ -1,0 +1,16 @@
+{
+  "name": "TUERTI",
+  "sex": "Hembra",
+  "age": "5 AÑOS",
+  "salud": {
+    "castrado": true,
+    "desparasitado": true,
+    "vacunado": true
+  },
+  "caracter": "Tuerti lleva años viendo pasar la vida desde el refugio municipal, pero su alegría sigue intacta. Es una perrita superbuena, social y con un carácter ejemplar. A sus 5 años, está en la edad perfecta: ya pasó la etapa de travesuras de cachorra y solo busca compañía y mimos. Está castrada, desparasitada y se entrega con su plan sanitario al día (vacunada y despulgada). No tiene problemas de salud, solo le falta una familia.\n¿Le das el hogar que tanto esperó?\n👉 Completar formulario de pre-adopción",
+  "size": "Pequeño",
+  "observaciones": "Pesa 12 kg aprox",
+  "image": "/images/22.jpg",
+  "adopted": false,
+  "featured": true
+}
