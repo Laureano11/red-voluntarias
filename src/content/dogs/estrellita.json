@@ -1,0 +1,16 @@
+{
+  "name": "ESTRELLITA",
+  "sex": "Hembra",
+  "age": "4 AÑOS",
+  "salud": {
+    "castrado": true,
+    "desparasitado": true,
+    "vacunado": true
+  },
+  "caracter": "Estrellita ha pasado toda su vida en el refugio de Carmen de Areco y el mundo exterior todavía le asusta un poco. Es un alma dulce que sufrió mucho; su respuesta al miedo no es atacar, sino buscar un rincón donde sentirse segura. Necesita a alguien con paciencia infinita que le enseñe que ya no tiene que huir. Si sabés esperar, ella te va a regalar su corazón.",
+  "size": "Pequeño",
+  "observaciones": "10 kg aprox",
+  "image": "/images/IMG_7991.JPEG",
+  "adopted": false,
+  "featured": false
+}
