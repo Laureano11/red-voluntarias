@@ -1,6 +1,7 @@
 /**
- * Formulario de solicitud de adopción (Google Forms u otro).
- * Reemplazá la URL cuando la tengas lista.
+ * Configuración para el proceso de adopción.
+ * Reemplazá la URL por la de tu formulario de Google Forms real.
  */
-export const ADOPTION_GOOGLE_FORM_URL =
-  "https://forms.gle/5MYNETGAe3kJeLZ3A";
+
+/** URL del formulario de solicitud de adopción */
+export const ADOPTION_GOOGLE_FORM_URL = "https://forms.gle/5MYNETGAe3kJeLZ3A";
