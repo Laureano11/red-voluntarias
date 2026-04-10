@@ -13,6 +13,16 @@ Trabajamos en varios frentes para darle a cada animal las mejores chances de ten
 Realizamos y participamos en distintos eventos comunitarios, culturales y sociales para promover la tenencia responsable y el compromiso de la población.
 
 
+### Fotos y logos
+Guardamos las imagenes estaticas en la carpeta public/, que se sirve tal cual en el sitio.
+Recomendado:
+- public/images/logos/ (logos, isotipos, marcas)
+- public/images/proyectos/ (fotos de proyectos)
+- public/images/eventos/ (fotos de eventos)
+- public/images/campanas/ (imagenes de campanas)
+Luego se usan con rutas como /images/logos/tu-logo.png o /images/proyectos/mi-proyecto.jpg.
+
+
 ### Campañas de esterilización
 Organizamos y/o colaboramos en jornadas de esterilización (castración) llevadas a cabo por el área de Zoonosis Municipal y el Estado Nacional.
 

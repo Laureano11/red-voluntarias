@@ -16,17 +16,18 @@ const { title, subtitle, ctaText, ctaHref } = Astro.props;
   </div>
 
   <div class="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+    <img src="/images/red_logov1.png" alt="Red Voluntarias" class="mx-auto mb-8 h-24 w-auto drop-shadow-lg" />
     <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
       {title}
     </h1>
-    <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-blue-100 sm:text-xl">
+    <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-orange-100 sm:text-xl">
       {subtitle}
     </p>
     {ctaText && ctaHref && (
       <div class="mt-10">
         <a
           href={ctaHref}
-          class="inline-flex items-center gap-2 rounded-full bg-secondary px-8 py-3 text-lg font-semibold text-gray-900 shadow-lg transition-all hover:bg-secondary-dark hover:shadow-xl"
+          class="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3 text-lg font-semibold text-primary-dark shadow-lg transition-all hover:bg-gray-100 hover:shadow-xl"
         >
           {ctaText}
           <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">

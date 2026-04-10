@@ -94,7 +94,12 @@ export const proyectos: Proyecto[] = [
       "Nuestras voluntarias dedican sus tardes a entrar a esos caniles para recargarlos de energía y capturar su esencia. A través de fotos y videos profesionales, mostramos sus caritas al mundo.",
       "Una imagen bien lograda es, muchas veces, la única llave que tienen para abrir la puerta de esa \"cárcel\" y finalmente conocer el calor de una familia.",
     ],
-    imagenes: [],
+    imagenes: [
+      { src: "/images/proyectos/municipalidad/DSC03954.jpg", alt: "Perro del refugio municipal" },
+      { src: "/images/proyectos/municipalidad/DSC04086.jpg", alt: "Sesión de fotos en el refugio municipal" },
+      { src: "/images/proyectos/municipalidad/DSC04964.jpg", alt: "Voluntarias en jornada de visibilización" },
+      { src: "/images/proyectos/municipalidad/DSC06078.jpg", alt: "Perrito esperando ser adoptado" },
+    ],
     videos: [],
   },
   {

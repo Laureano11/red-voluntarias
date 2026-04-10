@@ -14,8 +14,8 @@ const activeCampaign = allCampaigns.find((c) => c.data.active);
 
 <Layout title="Inicio" description="Red de voluntarios dedicados al rescate y adopción responsable de animales en situación de calle.">
   <Hero
-    title="Dales una segunda oportunidad"
-    subtitle="Somos una red de voluntarios que rescata, rehabilita y encuentra hogares amorosos para animales en situación de calle. Cada adopción cambia dos vidas."
+    title="DEJATE ADOPTAR"
+    subtitle="Cada adopción cambia dos vidas, la de ellos y la tuya."
     ctaText="Ver perros en adopción"
     ctaHref="/adopciones/adoptar"
   />
@@ -47,23 +47,6 @@ const activeCampaign = allCampaigns.find((c) => c.data.active);
       </a>
     </div>
   </section>
-
-  <!-- Campaña activa -->
-  {activeCampaign && (
-    <section class="bg-surface-dark py-16">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h2 class="text-3xl font-bold text-gray-900">Campaña Activa</h2>
-          <p class="mx-auto mt-3 max-w-xl text-gray-600">
-            Tu aporte hace la diferencia. Ayudanos a alcanzar la meta.
-          </p>
-        </div>
-        <div class="mx-auto mt-10 max-w-lg">
-          <CampaignCard {...activeCampaign.data} />
-        </div>
-      </div>
-    </section>
-  )}
 
   <!-- CTA Final -->
   <section class="bg-gradient-to-r from-secondary to-amber-400 py-16 text-center">
