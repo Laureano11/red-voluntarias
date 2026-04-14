@@ -26,9 +26,7 @@ const sorted = [...entries].sort((a, b) => a.data.name.localeCompare(b.data.name
   </section>
 
   <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
-    <p class="mx-auto mb-10 max-w-2xl text-center text-gray-600">
-      Este listado se edita desde el panel del sitio: solo hace falta el <strong class="font-semibold text-gray-900">nombre</strong> y una <strong class="font-semibold text-gray-900">foto</strong> por perro.
-    </p>
+   
 
     {sorted.length > 0 ? (
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
