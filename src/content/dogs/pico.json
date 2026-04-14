@@ -1,0 +1,16 @@
+{
+  "name": "PICO",
+  "sex": "Macho",
+  "age": "3 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": true,
+    "vacunado": true
+  },
+  "caracter": "Super tranquilo, docil y obediente, se lleva bien con otros perros y gatos. Vive en el refugio municipal. Su tamaño es muy grande.",
+  "size": "Grande",
+  "observaciones": "Si queres saber más sobre él escribinos, o entra a nuestro instagram.",
+  "image": "/images/DSC04571.jpg",
+  "adopted": false,
+  "featured": false
+}
