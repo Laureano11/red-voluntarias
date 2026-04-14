@@ -1,0 +1,16 @@
+{
+  "name": "PAULO",
+  "sex": "Macho",
+  "age": "3 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": true,
+    "vacunado": true
+  },
+  "caracter": "Super bueno y tranquilo. Vive en el refugio municipal.",
+  "size": "Mediano",
+  "observaciones": "Si queres saber mas sobre él entra a nuestro instagram y te contamos su historia.",
+  "image": "/images/DSC04639.jpg",
+  "adopted": false,
+  "featured": false
+}
