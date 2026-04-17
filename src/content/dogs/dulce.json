@@ -1,0 +1,16 @@
+{
+  "name": "DULCE",
+  "sex": "Hembra",
+  "age": "4 AÑOS",
+  "salud": {
+    "castrado": true,
+    "desparasitado": true,
+    "vacunado": true
+  },
+  "caracter": "Super mimosa y sociable.",
+  "size": "Grande",
+  "observaciones": "Si queres saber mas sobre ella, entra a nuestro instagram y consultanos.",
+  "image": "/images/DSC07270.jpg",
+  "adopted": false,
+  "featured": false
+}
