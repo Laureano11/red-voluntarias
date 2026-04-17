@@ -1,0 +1,16 @@
+{
+  "name": "BETO",
+  "sex": "Macho",
+  "age": "3 AÑOS",
+  "salud": {
+    "castrado": true,
+    "desparasitado": true,
+    "vacunado": true
+  },
+  "caracter": "Super mimoso y tranquilo, se lleva bien con otros perros.",
+  "size": "Mediano",
+  "observaciones": "Si queres saber mas sobre él, escribinos.",
+  "image": "/images/DSC08035.jpg",
+  "adopted": false,
+  "featured": false
+}
