@@ -1,0 +1,16 @@
+{
+  "name": "LUISITO",
+  "sex": "Macho",
+  "age": "3 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": true,
+    "vacunado": true
+  },
+  "caracter": "Super amoroso y juguetón.",
+  "size": "Pequeño",
+  "observaciones": "Pesa 10 kg. Si queres saber mas sobre él entrá a nuestro instagram.",
+  "image": "/images/DSC04496.jpg",
+  "adopted": false,
+  "featured": false
+}
