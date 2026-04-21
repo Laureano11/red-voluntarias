@@ -1,0 +1,16 @@
+{
+  "name": "Roque",
+  "sex": "Macho",
+  "age": "2 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": true,
+    "vacunado": true
+  },
+  "caracter": "Super juguetón.",
+  "size": "Pequeño",
+  "observaciones": "Vive en elr efugio nunicipal, perdio su orejita a causa de una miasis.",
+  "image": "/images/DSC08119.jpg",
+  "adopted": false,
+  "featured": false
+}
