@@ -1,0 +1,16 @@
+{
+  "name": "AKIRA",
+  "sex": "Hembra",
+  "age": "4 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": false,
+    "vacunado": true
+  },
+  "caracter": "Es un amor con los humanos, convive con otro perrito, pero no se lleva bien con todos.",
+  "size": "Mediano",
+  "observaciones": "Vive en el refugio municipal.",
+  "image": "/images/3.png",
+  "adopted": false,
+  "featured": false
+}
