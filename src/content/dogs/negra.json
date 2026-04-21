@@ -1,0 +1,16 @@
+{
+  "name": "NEGRA",
+  "sex": "Hembra",
+  "age": "3 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": false,
+    "vacunado": true
+  },
+  "caracter": "Super juguetona.",
+  "size": "Mediano",
+  "observaciones": "Vive ene l refugio municipall.",
+  "image": "/images/DSC06073.jpg",
+  "adopted": false,
+  "featured": false
+}
