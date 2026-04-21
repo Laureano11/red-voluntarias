@@ -1,0 +1,16 @@
+{
+  "name": "FELIX",
+  "sex": "Macho",
+  "age": "6 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": true,
+    "vacunado": false
+  },
+  "caracter": "Super mimoso. No se lleva con otros perros.",
+  "size": "Mediano",
+  "observaciones": "Vive ene l refugio municipal.",
+  "image": "/images/DSC05171.jpg",
+  "adopted": false,
+  "featured": false
+}
