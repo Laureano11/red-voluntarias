@@ -1,0 +1,16 @@
+{
+  "name": "LEÓN",
+  "sex": "Macho",
+  "age": "3 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": true,
+    "vacunado": true
+  },
+  "caracter": "Super sociable y mimoso. Se lleva bien con otros perros.",
+  "size": "Mediano",
+  "observaciones": "Vive en el refugio municipal.",
+  "image": "/images/DSC06751.jpg",
+  "adopted": false,
+  "featured": false
+}
