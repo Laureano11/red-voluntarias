@@ -1,0 +1,16 @@
+{
+  "name": "MARTÍN",
+  "sex": "Macho",
+  "age": "5 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": false,
+    "vacunado": true
+  },
+  "caracter": "Soy un poco miedoso, pero con paciencia voy a aprender a confiar.",
+  "size": "Mediano",
+  "observaciones": "Vive en el refugio municipal.",
+  "image": "/images/DSC06510.jpg",
+  "adopted": false,
+  "featured": false
+}
