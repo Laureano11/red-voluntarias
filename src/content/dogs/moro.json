@@ -1,0 +1,16 @@
+{
+  "name": "Moro",
+  "sex": "Macho",
+  "age": "2 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": true,
+    "vacunado": true
+  },
+  "caracter": "Super juguetón.",
+  "size": "Mediano",
+  "observaciones": "10 kg aprox. Vive ene l refugio municipall.",
+  "image": "/images/4.png",
+  "adopted": false,
+  "featured": false
+}
