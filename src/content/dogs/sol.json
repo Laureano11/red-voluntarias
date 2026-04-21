@@ -1,0 +1,16 @@
+{
+  "name": "Sol",
+  "sex": "Hembra",
+  "age": "3 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": true,
+    "vacunado": true
+  },
+  "caracter": "Super tranquila, necesita paciencia para entrar en confianza.",
+  "size": "Mediano",
+  "observaciones": "Vive ene l refugio municipall.",
+  "image": "/images/DSC07584.jpg",
+  "adopted": false,
+  "featured": false
+}
