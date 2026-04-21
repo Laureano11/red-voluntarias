@@ -1,0 +1,16 @@
+{
+  "name": "PANDEMIA",
+  "sex": "Macho",
+  "age": "5 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": true,
+    "vacunado": true
+  },
+  "caracter": "Super tranquilo y compañero.",
+  "size": "Grande",
+  "observaciones": "Vive en el refugio municipal, se lleva bien con otros perros.",
+  "image": "/images/DSC08022.jpg",
+  "adopted": false,
+  "featured": false
+}
