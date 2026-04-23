@@ -1,0 +1,16 @@
+{
+  "name": "PACO",
+  "sex": "Macho",
+  "age": "5 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": false,
+    "vacunado": true
+  },
+  "caracter": "Super jugueton y mimoso",
+  "size": "Mediano",
+  "observaciones": "Se encuentra en el refugio municipal.",
+  "image": "/images/DSC04843.jpg",
+  "adopted": false,
+  "featured": false
+}
