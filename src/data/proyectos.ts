@@ -46,7 +46,7 @@ function cl(carpeta: string, nombres: string[], titulo: string): ImagenProyecto[
 const proyectos_data: Proyecto[] = [
   {
     id: "no-mas-perros-basural",
-    titulo: "No mas perros en el basural",
+    titulo: "No más perros en el basural",
     subtitulo: "Una vida no es basura",
     descripcion: [
       "Logramos sacar a todos los animales del basural y protegemos el predio con camaras y senalizacion para evitar nuevos abandonos.",
@@ -67,7 +67,7 @@ const proyectos_data: Proyecto[] = [
       "IMG_7755.jpg",
       "IMG_7771.jpg",
       "Luna.png",
-    ], "No mas perros en el basural"),
+    ], "No más perros en el basural"),
     videos: [],
   },
   {
@@ -154,8 +154,8 @@ const proyectos_data: Proyecto[] = [
     videos: [],
   },
   {
-    id: "concientizacion-en-jardines",
-    titulo: "Concientizacion en jardines",
+    id: "concientización-en-jardines",
+    titulo: "Concientización en jardines",
     subtitulo: "Sembrando respeto desde la infancia",
     descripcion: [
       "Charlas y actividades educativas en jardines de infantes sobre el cuidado responsable y el amor por los animales.",
@@ -171,7 +171,7 @@ const proyectos_data: Proyecto[] = [
       "IMG_7322.jpg",
       "IMG_7326.jpg",
       "df4afc84-2d05-4121-b246-7368ffa98a11.jpg",
-    ], "Concientizacion en jardines"),
+    ], "Concientización en jardines"),
     videos: [],
   },
   {

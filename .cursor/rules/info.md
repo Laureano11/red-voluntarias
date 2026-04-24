@@ -219,7 +219,7 @@ Todo lo recaudado se destina a la Red de Voluntarias para la atención de los an
 
 ¡Si tenés un comercio, ayudanos poniendo la alcancía a la vista y cuidando el aporte de los vecinos!
 
-6. CONCIENTIZACION EN JARDINES
+6. CONCIENTIZACIÓN EN JARDINES
 Título: Sembrando respeto desde la infancia
 Subtítulo: Charlas y actividades educativas en jardines de infantes sobre el cuidado responsable y el amor por los animales.
 Creemos firmemente que los niños son la semilla de un mundo mejor. Por eso, visitamos los jardines de infantes de Carmen de Areco para conversar sobre la tenencia responsable y el respeto hacia todos los seres sintientes.
