@@ -1,0 +1,16 @@
+{
+  "name": "CARO",
+  "sex": "Hembra",
+  "age": "3-4 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": false,
+    "vacunado": true
+  },
+  "caracter": "Super dulce y juguetona",
+  "size": "Mediano",
+  "observaciones": "Vive en el refugio municipal.",
+  "image": "/images/DSC05709.jpg",
+  "adopted": false,
+  "featured": false
+}
