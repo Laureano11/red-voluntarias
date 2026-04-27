@@ -1,0 +1,16 @@
+{
+  "name": "BLACO",
+  "sex": "Macho",
+  "age": "7",
+  "salud": {
+    "castrado": true,
+    "desparasitado": false,
+    "vacunado": true
+  },
+  "caracter": "Es un perrito muy tranquilo.",
+  "size": "Mediano",
+  "observaciones": "Vive en el refugio municipal.",
+  "image": "/images/DSC07241.jpg",
+  "adopted": false,
+  "featured": false
+}
