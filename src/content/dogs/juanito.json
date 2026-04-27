@@ -1,0 +1,16 @@
+{
+  "name": "JUANITO",
+  "sex": "Macho",
+  "age": "7 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": false,
+    "vacunado": true
+  },
+  "caracter": "Es un viejitos muy bueno, que merece una oportunidad.",
+  "size": "Mediano",
+  "observaciones": "Vive en el refugio municipal.",
+  "image": "/images/DSC06826.jpg",
+  "adopted": false,
+  "featured": false
+}
