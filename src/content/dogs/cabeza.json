@@ -1,0 +1,16 @@
+{
+  "name": "CABEZA",
+  "sex": "Macho",
+  "age": "5 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": false,
+    "vacunado": true
+  },
+  "caracter": "Me cuenta confiar, pero cuando me haces mimos soy super dulce.",
+  "size": "Mediano",
+  "observaciones": "Vive en el refugio municipal.",
+  "image": "/images/DSC05832.jpg",
+  "adopted": false,
+  "featured": false
+}
