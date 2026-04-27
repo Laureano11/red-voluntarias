@@ -1,0 +1,16 @@
+{
+  "name": "Vieji",
+  "sex": "Hembra",
+  "age": "7 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": false,
+    "vacunado": true
+  },
+  "caracter": "Super dulce y tranquila-",
+  "size": "Mediano",
+  "observaciones": "Vive en el refugio municipal.",
+  "image": "/images/DSC05809.jpg",
+  "adopted": false,
+  "featured": false
+}
