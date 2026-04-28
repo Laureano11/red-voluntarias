@@ -1,0 +1,16 @@
+{
+  "name": "MONCHO",
+  "sex": "Macho",
+  "age": "9 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": false,
+    "vacunado": true
+  },
+  "caracter": "Viejito muy tranquilo y compañero.",
+  "size": "Mediano",
+  "observaciones": "Vive en el refugio municipal.",
+  "image": "/images/DSC04921.jpg",
+  "adopted": false,
+  "featured": false
+}
