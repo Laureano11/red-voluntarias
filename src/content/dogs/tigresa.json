@@ -1,0 +1,16 @@
+{
+  "name": "TIGRESA",
+  "sex": "Hembra",
+  "age": "6 años",
+  "salud": {
+    "castrado": true,
+    "desparasitado": false,
+    "vacunado": true
+  },
+  "caracter": "Es un poco miedosa, pero con paciencia, logra confiar y amar.",
+  "size": "Mediano",
+  "observaciones": "Vive en el refugio municipal.",
+  "image": "/images/DSC05442.jpg",
+  "adopted": false,
+  "featured": false
+}
